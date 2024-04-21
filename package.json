@@ -1,15 +1,29 @@
 {
   "name": "api-rest-virtualiza",
   "version": "1.0.0",
-  "description": "",
+  "description": "Api rest para el challenge de virtualiza app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "tsc": "tsc",
+    "dev": "ts-node-dev src/index.ts",
+    "start-build": "node build/index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "Node",
+    "Typescript",
+    "Express"
+  ],
+  "author": "nikodev",
+  "license": "MIT",
   "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.12.7",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "express": "4.19.2",
+    "mysql2": "^3.9.7",
+    "sequelize": "^6.37.3"
   }
 }
