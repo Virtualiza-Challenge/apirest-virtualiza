@@ -1,26 +1,34 @@
-import express from 'express'
-import { sequelize } from './database'
-import './models/Driver'
-import './models/Vehicle'
-import './models/Trip'
+import express from "express";
+import { sequelize } from "./database";
+import driversRoutes from "./routes/drivers.routes";
+import vehiclesRoutes from "./routes/vehicles.routes";
+import tripsRoutes from "./routes/trips.routes";
+import { Paths } from "./routes/paths";
 
-const app = express()
+import "./models/Driver";
+import "./models/Vehicle";
+import "./models/Trip";
 
-app.use(express.json())
+const app = express();
 
-const PORT = 3000
+app.use(express.json());
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+app.use(Paths.DRIVERS, driversRoutes);
+app.use(Paths.VEHICLES, vehiclesRoutes);
+app.use(Paths.TRIPS, tripsRoutes);
+
+const PORT = 3000;
+
 const main = async () => {
   try {
-    await sequelize.sync()
-    console.log('Connection has been established successfully.')
+    await sequelize.sync();
+    console.log("Connection has been established successfully.");
     app.listen(PORT, () => {
-      console.log('Server on port: ', PORT)
-    })
+      console.log("Server on port: ", PORT);
+    });
   } catch (error) {
-    console.error('Unable to connect to the database:', error)
+    console.error("Unable to connect to the database:", error);
   }
-}
+};
 
-void main()
+void main();

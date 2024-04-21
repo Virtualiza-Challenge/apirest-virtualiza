@@ -14,7 +14,6 @@
 >   * ts-node-dev v2.0.0
 >   * mysql2: v3.9.7
 >   * sequelize: v6.37.3
->   * ts-standard: v12.0.2
 >   * npx license mit
 
 
