@@ -1,5 +1,6 @@
 import { TripProps, TripUpdateProps } from "../interfaces/Trip";
 import { Trip } from "../models";
+import { DriverServices } from "./driverServices";
 import { VehicleServices } from "./vehicleServices";
 
 const getAll = async () => {
@@ -39,7 +40,7 @@ const destroy = async (id: string) => {
   return success > 0;
 };
 
-export const DriverServices = {
+export const TripServices = {
   getAll,
   getByID,
   create,
