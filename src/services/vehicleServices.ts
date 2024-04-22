@@ -1,46 +1,35 @@
-import { DriverProps } from "../interfaces/Driver";
-import { Driver } from "../models";
+import { VehicleProps } from "../interfaces/Vehicle";
+import { Vehicle } from "../models";
 
-export const getAll = async () => {
-  const drivers = await Driver.findAll();
-  return { count: drivers.length, drivers };
+const getAll = async () => {
+  const vehicles = await Vehicle.findAll();
+  return { count: vehicles.length, vehicles };
 };
 
-export const getByID = async (id: string) => {
-  const driver = await Driver.findByPk(id);
-  return driver;
+const getByID = async (id: string) => {
+  const vehicle = await Vehicle.findByPk(id);
+  return vehicle;
 };
 
-export const createDriver = async (aDriver: DriverProps) => {
-  const {
-    name,
-    surname,
-    dni,
-    license,
-    license_type,
-    emision_date,
-    able_to_drive,
-  } = aDriver;
-
-  const newDriver = await Driver.create({
-    name,
-    surname,
-    dni,
-    license,
-    license_type,
-    emision_date,
-    able_to_drive,
-  });
-
-  return newDriver;
+const create = async (aVehicle: VehicleProps) => {
+  const newVehicle = await Vehicle.create({ ...aVehicle });
+  return { id: newVehicle.dataValues.id };
 };
 
-export const updateDriver = async (id: string, aDriver: DriverProps) => {
-  const [result] = await Driver.update(aDriver, { where: { id } });
+const update = async (id: string, aVehicle: VehicleProps) => {
+  const [result] = await Vehicle.update(aVehicle, { where: { id } });
   return { success: result > 0 };
 };
 
-export const deleteDriver = async (id: string) => {
-  const success = await Driver.destroy({ where: { id } });
+const destroy = async (id: string) => {
+  const success = await Vehicle.destroy({ where: { id } });
   return success > 0;
+};
+
+export const VehicleServices = {
+  getAll,
+  getByID,
+  create,
+  update,
+  destroy,
 };
