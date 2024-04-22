@@ -22,8 +22,10 @@ const update = async (id: string, aDriver: DriverProps) => {
 };
 
 const destroy = async (id: string) => {
-  const success = await Driver.destroy({ where: { id } });
-  return success > 0;
+  // const success = await Driver.destroy({ where: { id } });
+  // return success > 0;
+  const [result] = await Driver.update({ isActive: false }, { where: { id } });
+  return { success: result > 0 };
 };
 
 export const DriverServices = {

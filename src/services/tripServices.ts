@@ -36,8 +36,10 @@ const update = async (id: string, aTrip: TripUpdateProps) => {
 };
 
 const destroy = async (id: string) => {
-  const success = await Trip.destroy({ where: { id } });
-  return success > 0;
+  // const success = await Trip.destroy({ where: { id } });
+  // return success > 0;
+  const [result] = await Trip.update({ isCanceled: true }, { where: { id } });
+  return { success: result > 0 };
 };
 
 export const TripServices = {

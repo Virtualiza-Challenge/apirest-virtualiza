@@ -22,8 +22,10 @@ const update = async (id: string, aVehicle: VehicleProps) => {
 };
 
 const destroy = async (id: string) => {
-  const success = await Vehicle.destroy({ where: { id } });
-  return success > 0;
+  // const success = await Vehicle.destroy({ where: { id } });
+  // return success > 0;
+  const [result] = await Vehicle.update({ isActive: false }, { where: { id } });
+  return { success: result > 0 };
 };
 
 export const VehicleServices = {
