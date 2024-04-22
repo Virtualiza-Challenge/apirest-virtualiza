@@ -12,8 +12,27 @@ export const getByID = async (id: string) => {
 };
 
 export const createDriver = async (aDriver: DriverProps) => {
-  const newDriver = await Driver.create({ ...aDriver });
-  return { id: newDriver.dataValues.id };
+  const {
+    name,
+    surname,
+    dni,
+    license,
+    license_type,
+    emision_date,
+    able_to_drive,
+  } = aDriver;
+
+  const newDriver = await Driver.create({
+    name,
+    surname,
+    dni,
+    license,
+    license_type,
+    emision_date,
+    able_to_drive,
+  });
+
+  return newDriver;
 };
 
 export const updateDriver = async (id: string, aDriver: DriverProps) => {

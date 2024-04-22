@@ -1,18 +1,12 @@
 import { Router } from "express";
-import {
-  getDrivers,
-  getDriverByID,
-  createDriver,
-  updateDriver,
-  deleteDriver,
-} from "../controllers/drivers.contollers";
+import * as controller from "../controllers/drivers.contollers";
 
 const router = Router();
 
-router.get("/", getDrivers);
-router.get("/:id", getDriverByID);
-router.post("/", createDriver);
-router.put("/:id", updateDriver);
-router.delete("/:id", deleteDriver);
+router.get("/", controller.getDrivers);
+router.get("/:id", controller.getDriverByID);
+router.post("/", controller.createDriver);
+router.put("/:id", controller.updateDriver);
+router.delete("/:id", controller.deleteDriver);
 
 export default router;
