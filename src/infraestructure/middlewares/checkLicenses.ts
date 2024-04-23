@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
-import { DriverServices } from "../services";
-import { dateIsLessThan } from "../helpers/dateIsLessThan";
+import { DriverServices } from "../../domain/services";
+import { dateIsLessThan } from "../../helpers/dateIsLessThan";
 
 export const checkLicenses = async (
   _req: Request,

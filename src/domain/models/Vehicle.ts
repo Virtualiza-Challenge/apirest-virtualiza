@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import { sequelize } from "../database";
+import sequelize from "../../infraestructure/database";
 
 export const Vehicle = sequelize.define(
   "vehicles",

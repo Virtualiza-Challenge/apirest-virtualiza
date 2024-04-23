@@ -1,4 +1,4 @@
-import { TripProps, TripUpdateProps } from "../interfaces/Trip";
+import { TripProps, TripUpdateProps } from "../../interfaces/Trip";
 import { Trip } from "../models";
 import { DriverServices } from "./driverServices";
 import { VehicleServices } from "./vehicleServices";

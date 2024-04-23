@@ -1,5 +1,5 @@
-import { dateIsLessThan } from "../helpers/dateIsLessThan";
-import { DriverProps } from "../interfaces/Driver";
+import { dateIsLessThan } from "../../helpers/dateIsLessThan";
+import { DriverProps } from "../../interfaces/Driver";
 import { Driver } from "../models";
 
 const getAll = async () => {
@@ -28,8 +28,6 @@ const update = async (id: string, aDriver: DriverProps) => {
 };
 
 const destroy = async (id: string) => {
-  // const success = await Driver.destroy({ where: { id } });
-  // return success > 0;
   const [result] = await Driver.update({ isActive: false }, { where: { id } });
   return { success: result > 0 };
 };

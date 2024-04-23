@@ -1,7 +1,7 @@
 import { Router } from "express";
 import * as controller from "../controllers/drivers.contollers";
-import { checkLicense } from "../middlewares/checkLicense";
-import { checkLicenses } from "../middlewares/checkLicenses";
+import { checkLicenses } from "../infraestructure/middlewares/checkLicenses";
+import { checkLicense } from "../infraestructure/middlewares/checkLicense";
 
 const router = Router();
 

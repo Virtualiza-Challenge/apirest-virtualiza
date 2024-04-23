@@ -1,6 +1,6 @@
 import { DataTypes } from "sequelize";
-import { sequelize } from "../database";
 import { randomBytes } from "crypto";
+import sequelize from "../../infraestructure/database";
 
 export const Driver = sequelize.define(
   "drivers",

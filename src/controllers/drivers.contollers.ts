@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { DriverServices } from "../services";
+import { DriverServices } from "../domain/services";
 
 export const getDrivers = async (_req: Request, res: Response) => {
   const drivers = await DriverServices.getAll();

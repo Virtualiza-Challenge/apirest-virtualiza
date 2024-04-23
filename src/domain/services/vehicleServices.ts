@@ -1,4 +1,4 @@
-import { VehicleProps } from "../interfaces/Vehicle";
+import { VehicleProps } from "../../interfaces/Vehicle";
 import { Vehicle } from "../models";
 
 const getAll = async () => {

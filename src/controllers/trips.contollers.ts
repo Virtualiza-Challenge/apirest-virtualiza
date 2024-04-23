@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { TripServices } from "../services";
+import { TripServices } from "../domain/services";
 
 export const getTrips = async (_req: Request, res: Response) => {
   const trips = await TripServices.getAll();
