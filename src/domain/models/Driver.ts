@@ -24,8 +24,8 @@ export const Driver = sequelize.define(
       defaultValue: randomBytes(16).toString("hex"),
     },
     license_type: {
-      type: DataTypes.ENUM("Pofessional", "Personal"),
-      defaultValue: "Pofessional",
+      type: DataTypes.ENUM("Professional", "Personal"),
+      defaultValue: "Professional",
     },
     emision_date: {
       type: DataTypes.DATEONLY,

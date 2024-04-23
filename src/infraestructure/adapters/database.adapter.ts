@@ -1,9 +1,5 @@
 import { Sequelize } from "sequelize";
 
-// import "./models/Driver";
-// import "./models/Vehicle";
-// import "./models/Trip";
-
 let sequelize: Sequelize | null = null;
 
 export function getDatabaseInstance(): Sequelize {

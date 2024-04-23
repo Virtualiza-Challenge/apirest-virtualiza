@@ -1,6 +1,7 @@
-import { dateIsLessThan } from "../../helpers/dateIsLessThan";
+import { driverLicenseIsvalid } from "../../helpers/driverLicenseIsvalid";
 import { DriverProps } from "../../interfaces/Driver";
 import { Driver } from "../models";
+// import { WAHE_MONTH } from "../constants";
 
 const getAll = async () => {
   const drivers = await Driver.findAll();
@@ -13,12 +14,15 @@ const getByID = async (id: string) => {
 };
 
 const create = async (aDriver: DriverProps) => {
-  const { emision_date, ...restProps } = aDriver;
+  const { emision_date, license_type, ...restProps } = aDriver;
+
   const newDriver = await Driver.create({
-    able_to_drive: dateIsLessThan(emision_date, 5),
+    able_to_drive: driverLicenseIsvalid(emision_date, license_type),
     emision_date: new Date(emision_date),
+    license_type,
     ...restProps,
   });
+
   return { id: newDriver.dataValues.id };
 };
 

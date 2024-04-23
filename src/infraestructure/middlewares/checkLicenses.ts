@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import { DriverServices } from "../../domain/services";
-import { dateIsLessThan } from "../../helpers/dateIsLessThan";
+import { driverLicenseIsvalid } from "../../helpers/driverLicenseIsvalid";
 
 export const checkLicenses = async (
   _req: Request,
@@ -11,7 +11,10 @@ export const checkLicenses = async (
     const result = await DriverServices.getAll();
 
     for (const driver of result.drivers) {
-      if (!dateIsLessThan(driver.dataValues.emision_date)) {
+      const emision_date = driver?.dataValues.emision_date;
+      const license_type = driver?.dataValues.license_type;
+
+      if (!driverLicenseIsvalid(emision_date, license_type)) {
         await DriverServices.invalidateLicense(driver.dataValues.id);
       }
     }
