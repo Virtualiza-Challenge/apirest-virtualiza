@@ -20,4 +20,4 @@
 
 Estructura base del proyecto
 
-![Static Badge](https://img.shields.io/badge/virtualiza-green?label=1.0.0&labelColor=black)
+![Structure](https://github.com/Virtualiza-Challenge/apirest-virtualiza/blob/05-structure/Docs/Estructura/struture.png?raw=true)
