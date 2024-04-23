@@ -1,10 +1,46 @@
 import { driverLicenseIsvalid } from "../../helpers/driverLicenseIsvalid";
 import { DriverProps } from "../../interfaces/Driver";
-import { Driver } from "../models";
-// import { WAHE_MONTH } from "../constants";
+import { Driver, Trip } from "../models";
+import { Op } from "sequelize";
+import { WAHE_MONTH } from "../constants";
 
 const getAll = async () => {
-  const drivers = await Driver.findAll();
+  // Obtener la fecha actual
+  const currentDate = new Date();
+
+  // Obtener el primer día del mes actual
+  const firstDayOfMonth = new Date(
+    currentDate.getFullYear(),
+    currentDate.getMonth(),
+    1
+  );
+
+  // Obtener el último día del mes actual
+  const lastDayOfMonth = new Date(
+    currentDate.getFullYear(),
+    currentDate.getMonth() + 1,
+    0
+  );
+
+  const drivers = await Driver.findAll().then(async (drivers) => {
+    for (const driver of drivers) {
+      const totalKMS = await Trip.sum("kms", {
+        where: {
+          driver_id: driver.dataValues.id,
+          date: {
+            [Op.between]: [firstDayOfMonth, lastDayOfMonth],
+          },
+        },
+      });
+
+      const wage_month = totalKMS * WAHE_MONTH;
+      driver.dataValues.wage_month = wage_month;
+      driver.dataValues.driven_kms = totalKMS ?? 0;
+    }
+
+    return drivers;
+  });
+
   return { count: drivers.length, drivers };
 };
 
