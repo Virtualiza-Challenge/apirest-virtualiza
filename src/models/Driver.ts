@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../database";
+import { randomBytes } from "crypto";
 
 export const Driver = sequelize.define(
   "drivers",
@@ -20,6 +21,7 @@ export const Driver = sequelize.define(
     },
     license: {
       type: DataTypes.STRING,
+      defaultValue: randomBytes(16).toString("hex"),
     },
     license_type: {
       type: DataTypes.ENUM("Pofessional", "Personal"),

@@ -1,3 +1,4 @@
+import { dateIsLessThan } from "../helpers/dateIsLessThan";
 import { DriverProps } from "../interfaces/Driver";
 import { Driver } from "../models";
 
@@ -12,7 +13,12 @@ const getByID = async (id: string) => {
 };
 
 const create = async (aDriver: DriverProps) => {
-  const newDriver = await Driver.create({ ...aDriver });
+  const { emision_date, ...restProps } = aDriver;
+  const newDriver = await Driver.create({
+    able_to_drive: dateIsLessThan(emision_date, 5),
+    emision_date: new Date(emision_date),
+    ...restProps,
+  });
   return { id: newDriver.dataValues.id };
 };
 
@@ -28,10 +34,19 @@ const destroy = async (id: string) => {
   return { success: result > 0 };
 };
 
+const invalidateLicense = async (id: string) => {
+  const [result] = await Driver.update(
+    { able_to_drive: false },
+    { where: { id } }
+  );
+  return { success: result > 0 };
+};
+
 export const DriverServices = {
   getAll,
   getByID,
   create,
   update,
   destroy,
+  invalidateLicense,
 };
