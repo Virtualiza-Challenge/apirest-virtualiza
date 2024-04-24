@@ -6,7 +6,21 @@ import { DriverServices } from "./driverServices";
 import { VehicleServices } from "./vehicleServices";
 
 const getAll = async () => {
-  const trips = await Trip.findAll();
+  const trips = await Trip.findAll({
+    attributes: ["date", "hour", "minutes", "kms"],
+    include: [
+      {
+        association: "driver",
+        where: { isActive: true },
+        attributes: ["name", "surname"],
+      },
+      {
+        association: "vehicle",
+        where: { isActive: true },
+        attributes: ["plate", "brand", "model"],
+      },
+    ],
+  });
   return { count: trips.length, trips };
 };
 
