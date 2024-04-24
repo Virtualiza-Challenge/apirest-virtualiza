@@ -28,20 +28,18 @@ const destroy = async (id: string) => {
 };
 
 const loadMileage = async (id: string, mileage: number) => {
-  const [_, success] = await Vehicle.increment(
-    { kms: +mileage },
+  const vehicle = await VehicleServices.getByID(id);
+
+  if (!vehicle) return { success: false };
+
+  const kmsAcum = vehicle.dataValues.kms + mileage;
+
+  const [result] = await Vehicle.update(
+    { kms: kmsAcum, is_available: kmsAcum < SERVICE_MILEAGE },
     { where: { id } }
   );
 
-  if (!success) return { success: false };
-
-  const vehicle = await VehicleServices.getByID(id);
-
-  if (vehicle?.dataValues.kms >= SERVICE_MILEAGE) {
-    await Vehicle.update({ is_available: false }, { where: { id } });
-  }
-
-  return { success: true };
+  return { success: result > 0 };
 };
 
 const ready = async (id: string) => {

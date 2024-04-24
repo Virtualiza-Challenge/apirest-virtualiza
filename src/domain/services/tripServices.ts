@@ -25,6 +25,7 @@ const create = async (aDriver: TripProps) => {
 
   const newTrip = await Trip.create({
     ...restProps,
+    kms,
     driver_id: driverFound.dataValues.id,
     vehicle_id: vehicleFound.dataValues.id,
   });
