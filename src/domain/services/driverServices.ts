@@ -1,28 +1,19 @@
 import { driverLicenseIsvalid } from "../../helpers/driverLicenseIsvalid";
 import { DriverProps } from "../../interfaces/Driver";
-import { Driver, Trip } from "../models";
-import { Op } from "sequelize";
-import {
-  FIRST_DAY_OF_MONTH,
-  LAST_DAY_OF_MONTH,
-  WAHE_MONTH,
-} from "../constants";
+import { Driver } from "../models";
+import { WAHE_MONTH } from "../constants";
+import { TripServices } from "./tripServices";
 
 const getAll = async () => {
   const drivers = await Driver.findAll().then(async (drivers) => {
     for (const driver of drivers) {
-      const totalKMS = await Trip.sum("kms", {
-        where: {
-          driver_id: driver.dataValues.id,
-          date: {
-            [Op.between]: [FIRST_DAY_OF_MONTH, LAST_DAY_OF_MONTH],
-          },
-        },
-      });
+      const totalKMS = await TripServices.drivenKmsByID(driver.dataValues.id);
 
-      const wage_month = totalKMS * WAHE_MONTH;
-      driver.dataValues.wage_month = wage_month;
-      driver.dataValues.driven_kms = totalKMS ?? 0;
+      if (totalKMS > 0) {
+        const wage_month = totalKMS * WAHE_MONTH;
+        driver.dataValues.wage_month = wage_month;
+        driver.dataValues.driven_kms = totalKMS ?? 0;
+      }
     }
 
     return drivers;
@@ -36,17 +27,13 @@ const getByID = async (id: string) => {
 
   if (!driver) return false;
 
-  const totalKMS = await Trip.sum("kms", {
-    where: {
-      driver_id: driver.dataValues.id,
-      date: {
-        [Op.between]: [FIRST_DAY_OF_MONTH, LAST_DAY_OF_MONTH],
-      },
-    },
-  });
-  const wage_month = totalKMS * WAHE_MONTH;
-  driver.dataValues.wage_month = wage_month;
-  driver.dataValues.driven_kms = totalKMS ?? 0;
+  const totalKMS = await TripServices.drivenKmsByID(driver.dataValues.id);
+
+  if (totalKMS > 0) {
+    const wage_month = totalKMS * WAHE_MONTH;
+    driver.dataValues.wage_month = wage_month;
+    driver.dataValues.driven_kms = totalKMS ?? 0;
+  }
 
   return driver;
 };

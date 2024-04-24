@@ -23,6 +23,7 @@ export const Vehicle = sequelize.define(
     },
     kms: {
       type: DataTypes.INTEGER,
+      defaultValue: 0,
     },
     is_available: {
       type: DataTypes.BOOLEAN,

@@ -16,3 +16,6 @@ export const LAST_DAY_OF_MONTH = new Date(
   CURRENT_DATE.getMonth() + 1,
   0
 );
+
+export const RESET_KMS_VEHICLE = 0;
+export const SERVICE_MILEAGE = 15000;

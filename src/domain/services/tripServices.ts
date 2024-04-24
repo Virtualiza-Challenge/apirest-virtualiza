@@ -1,4 +1,6 @@
+import { Op } from "sequelize";
 import { TripProps, TripUpdateProps } from "../../interfaces/Trip";
+import { FIRST_DAY_OF_MONTH, LAST_DAY_OF_MONTH } from "../constants";
 import { Trip } from "../models";
 import { DriverServices } from "./driverServices";
 import { VehicleServices } from "./vehicleServices";
@@ -14,7 +16,7 @@ const getByID = async (id: string) => {
 };
 
 const create = async (aDriver: TripProps) => {
-  const { driver_id, vehicle_id, ...restProps } = aDriver;
+  const { driver_id, vehicle_id, kms, ...restProps } = aDriver;
 
   const driverFound = await DriverServices.getByID(driver_id + "");
   const vehicleFound = await VehicleServices.getByID(vehicle_id + "");
@@ -27,6 +29,8 @@ const create = async (aDriver: TripProps) => {
     vehicle_id: vehicleFound.dataValues.id,
   });
 
+  await VehicleServices.loadMileage(vehicleFound.dataValues.id, kms);
+
   return { id: newTrip.dataValues.id };
 };
 
@@ -36,10 +40,21 @@ const update = async (id: string, aTrip: TripUpdateProps) => {
 };
 
 const destroy = async (id: string) => {
-  // const success = await Trip.destroy({ where: { id } });
-  // return success > 0;
   const [result] = await Trip.update({ isCanceled: true }, { where: { id } });
   return { success: result > 0 };
+};
+
+const drivenKmsByID = async (id: string) => {
+  const totalKMS = await Trip.sum("kms", {
+    where: {
+      driver_id: id,
+      date: {
+        [Op.between]: [FIRST_DAY_OF_MONTH, LAST_DAY_OF_MONTH],
+      },
+    },
+  });
+
+  return totalKMS;
 };
 
 export const TripServices = {
@@ -48,4 +63,5 @@ export const TripServices = {
   create,
   update,
   destroy,
+  drivenKmsByID,
 };
