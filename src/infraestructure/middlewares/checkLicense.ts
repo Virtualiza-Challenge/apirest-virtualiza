@@ -18,7 +18,7 @@ export const checkLicense = async (
   if (driverLicenseIsvalid(emision_date, license_type)) {
     return res.send(driver);
   } else {
-    await DriverServices.invalidateLicense(driverId);
+    await DriverServices.invalidateLicense(Number(driverId));
     next();
   }
 };
