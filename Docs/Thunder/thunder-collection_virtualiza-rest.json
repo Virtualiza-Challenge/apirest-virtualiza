@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "virtualiza-rest",
     "collectionId": "ba3cb0cd-cc83-4a05-8513-bcfa2c0c30d3",
-    "dateExported": "2024-04-22T22:41:58.652Z",
+    "dateExported": "2024-04-24T23:51:16.554Z",
     "version": "1.2",
     "folders": [
         {
@@ -69,11 +69,11 @@
             "colId": "ba3cb0cd-cc83-4a05-8513-bcfa2c0c30d3",
             "containerId": "d616208b-b110-4991-9b77-f7775636b466",
             "name": "find",
-            "url": "localhost:3000/drivers/13",
+            "url": "localhost:3000/drivers/1",
             "method": "GET",
             "sortNum": 30000,
             "created": "2024-04-21T22:33:41.315Z",
-            "modified": "2024-04-22T20:47:58.393Z",
+            "modified": "2024-04-24T00:18:11.946Z",
             "headers": []
         },
         {
@@ -109,11 +109,11 @@
             "method": "POST",
             "sortNum": 40000,
             "created": "2024-04-21T22:34:11.964Z",
-            "modified": "2024-04-22T22:30:36.274Z",
+            "modified": "2024-04-24T23:47:25.285Z",
             "headers": [],
             "body": {
                 "type": "json",
-                "raw": "{\n    \"name\": \"Candela\",\n    \"surname\": \"Lofredo\",\n    \"dni\": \"38651841\",\n    \"license\": \"077536addd9311ee88f80242ac140002\",\n    \"license_type\": \"Pofessional\",\n    \"emision_date\": \"2024-02-25\",\n    \"able_to_drive\": true\n}",
+                "raw": "{\n    \"name\": \"Ramon\",\n    \"surname\": \"Brain\",\n    \"dni\": \"34422345\",\n    \"license_type\": \"Professional\",\n    \"emision_date\": \"2022-06-06\"\n}",
                 "form": []
             }
         },
@@ -126,11 +126,11 @@
             "method": "POST",
             "sortNum": 40000,
             "created": "2024-04-21T22:44:05.862Z",
-            "modified": "2024-04-22T22:31:56.340Z",
+            "modified": "2024-04-24T23:48:45.818Z",
             "headers": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"plate\": \"KJS 925\",\n  \"brand\": \"Honda\",\n  \"model\": \"Civic\",\n  \"year\": 2010,\n  \"kms\": 0,\n  \"is_available\": true\n}",
+                "raw": "{\n  \"plate\": \"UQI 841\",\n  \"brand\": \"Volkswagen\",\n  \"model\": \"Vento\",\n  \"year\": 2015\n}",
                 "form": []
             }
         },
@@ -143,11 +143,11 @@
             "method": "POST",
             "sortNum": 40000,
             "created": "2024-04-21T22:51:39.022Z",
-            "modified": "2024-04-22T22:41:08.847Z",
+            "modified": "2024-04-24T23:50:37.482Z",
             "headers": [],
             "body": {
                 "type": "json",
-                "raw": "{\n    \"date\":  \"2024-04-19\",\n    \"hour\": 18,\n    \"minutes\": 49,\n    \"kms\": 3000,\n    \"driver_id\": 2,\n    \"vehicle_id\": 1\n}",
+                "raw": "{\n    \"date\":  \"2024-04-19\",\n    \"hour\": 18,\n    \"minutes\": 49,\n    \"kms\": 3000,\n    \"driver_id\": 2,\n    \"vehicle_id\": 4\n}",
                 "form": []
             }
         },
@@ -194,19 +194,24 @@
             "method": "PUT",
             "sortNum": 50000,
             "created": "2024-04-21T22:51:39.023Z",
-            "modified": "2024-04-21T22:52:10.341Z",
-            "headers": []
+            "modified": "2024-04-22T22:44:22.012Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"kms\": 6000\n}",
+                "form": []
+            }
         },
         {
             "_id": "d13b33d0-dde8-486e-a35e-b45eb87c76ff",
             "colId": "ba3cb0cd-cc83-4a05-8513-bcfa2c0c30d3",
             "containerId": "d616208b-b110-4991-9b77-f7775636b466",
             "name": "delete",
-            "url": "localhost:3000/drivers/6",
+            "url": "localhost:3000/drivers/1",
             "method": "DELETE",
             "sortNum": 60000,
             "created": "2024-04-21T22:35:18.233Z",
-            "modified": "2024-04-22T01:21:30.405Z",
+            "modified": "2024-04-22T22:56:45.125Z",
             "headers": []
         },
         {
@@ -234,5 +239,5 @@
             "headers": []
         }
     ],
-    "ref": "K1EmiskcJ4phzK6YVdmpGdm7TEW-FRtcgxzssDU4m9RiDrsBRPjm0DMSODn4Mc6qJ3SjBjMdkNsxj3efNHo8PA"
+    "ref": "K1EmiskcJ4phzK6YVdmpGSrvNK0lQfEX8mBfCf2jYwHFddZSvgWSNtWNHupNd94u_MD2Z7_vmHrIj2oFElrqDw"
 }
