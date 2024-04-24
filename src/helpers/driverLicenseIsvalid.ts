@@ -1,11 +1,12 @@
 import { LicenseType } from "../interfaces/Driver";
 
 export const driverLicenseIsvalid = (
-  emision_date: string,
+  emision_date: Date | string,
   license_type: LicenseType
 ) => {
   const valid = license_type === "Professional" ? 1 : 5;
-  const date = new Date(emision_date);
+  const date =
+    emision_date instanceof Date ? emision_date : new Date(emision_date);
 
   const currentDate = new Date();
 

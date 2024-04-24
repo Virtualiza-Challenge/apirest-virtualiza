@@ -1,9 +1,10 @@
-import { DataTypes } from "sequelize";
+import { DataTypes, Model } from "sequelize";
+import sequelize from "../../infraestructure/database";
+import { TripAttributes } from "../../interfaces/Trip";
 import { Driver } from "./Driver";
 import { Vehicle } from "./Vehicle";
-import sequelize from "../../infraestructure/database";
 
-export const Trip = sequelize.define(
+export const Trip = sequelize.define<Model<TripAttributes>>(
   "trips",
   {
     id: {

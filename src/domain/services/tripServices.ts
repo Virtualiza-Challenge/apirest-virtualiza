@@ -1,5 +1,5 @@
 import { Op } from "sequelize";
-import { TripProps, TripUpdateProps } from "../../interfaces/Trip";
+import { TripAttributes } from "../../interfaces/Trip";
 import { FIRST_DAY_OF_MONTH, LAST_DAY_OF_MONTH } from "../constants";
 import { Trip } from "../models";
 import { DriverServices } from "./driverServices";
@@ -29,7 +29,7 @@ const getByID = async (id: string) => {
   return trip;
 };
 
-const create = async (aDriver: TripProps) => {
+const create = async (aDriver: TripAttributes) => {
   const { driver_id, vehicle_id, kms, ...restProps } = aDriver;
 
   const driverFound = await DriverServices.getByID(driver_id + "");
@@ -49,7 +49,7 @@ const create = async (aDriver: TripProps) => {
   return { id: newTrip.dataValues.id };
 };
 
-const update = async (id: string, aTrip: TripUpdateProps) => {
+const update = async (id: string, aTrip: TripAttributes) => {
   const [result] = await Trip.update(aTrip, { where: { id } });
   return { success: result > 0 };
 };
@@ -59,7 +59,7 @@ const destroy = async (id: string) => {
   return { success: result > 0 };
 };
 
-const drivenKmsByID = async (id: string) => {
+const drivenKmsByID = async (id: number) => {
   const totalKMS = await Trip.sum("kms", {
     where: {
       driver_id: id,

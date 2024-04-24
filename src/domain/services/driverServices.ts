@@ -1,7 +1,7 @@
 import { driverLicenseIsvalid } from "../../helpers/driverLicenseIsvalid";
-import { DriverProps } from "../../interfaces/Driver";
-import { Driver } from "../models";
+import { DriverAttributes } from "../../interfaces/Driver";
 import { WAHE_MONTH } from "../constants";
+import { Driver } from "../models";
 import { TripServices } from "./tripServices";
 
 const getAll = async () => {
@@ -31,27 +31,27 @@ const getByID = async (id: string) => {
 
   if (totalKMS > 0) {
     const wage_month = totalKMS * WAHE_MONTH;
-    driver.dataValues.wage_month = wage_month;
-    driver.dataValues.driven_kms = totalKMS ?? 0;
+    driver.setDataValue("wage_month", wage_month);
+    driver.setDataValue("driven_kms", totalKMS ?? 0);
   }
 
   return driver;
 };
 
-const create = async (aDriver: DriverProps) => {
+const create = async (aDriver: DriverAttributes) => {
   const { emision_date, license_type, ...restProps } = aDriver;
 
   const newDriver = await Driver.create({
+    ...restProps,
     able_to_drive: driverLicenseIsvalid(emision_date, license_type),
     emision_date: new Date(emision_date),
     license_type,
-    ...restProps,
   });
 
   return { id: newDriver.dataValues.id };
 };
 
-const update = async (id: string, aDriver: DriverProps) => {
+const update = async (id: string, aDriver: DriverAttributes) => {
   const [result] = await Driver.update(aDriver, { where: { id } });
   return { success: result > 0 };
 };
@@ -61,7 +61,7 @@ const destroy = async (id: string) => {
   return { success: result > 0 };
 };
 
-const invalidateLicense = async (id: string) => {
+const invalidateLicense = async (id: number) => {
   const [result] = await Driver.update(
     { able_to_drive: false },
     { where: { id } }

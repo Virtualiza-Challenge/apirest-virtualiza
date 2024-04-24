@@ -1,8 +1,9 @@
-import { DataTypes } from "sequelize";
+import { DataTypes, Model } from "sequelize";
 import { randomBytes } from "crypto";
 import sequelize from "../../infraestructure/database";
+import { DriverAttributes } from "../../interfaces/Driver";
 
-export const Driver = sequelize.define(
+export const Driver = sequelize.define<Model<DriverAttributes>>(
   "drivers",
   {
     id: {
