@@ -55,6 +55,14 @@ const create = async (aDriver: TripAttributes) => {
 };
 
 const update = async (id: string, aTrip: TripAttributes) => {
+  if (!!aTrip.kms) {
+    const trip = await Trip.findByPk(id);
+
+    const updateKms = trip?.dataValues.kms! - aTrip.kms;
+
+    await VehicleServices.loadMileage(aTrip.id, updateKms);
+  }
+
   const [result] = await Trip.update(aTrip, { where: { id } });
   return { success: result > 0 };
 };

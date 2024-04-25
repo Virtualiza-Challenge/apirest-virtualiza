@@ -5,6 +5,6 @@ export interface TripAttributes {
   minutes: number;
   kms: number;
   isCanceled: boolean;
-  driver_id?: number;
-  vehicle_id?: number;
+  driver_id: number;
+  vehicle_id: number;
 }
