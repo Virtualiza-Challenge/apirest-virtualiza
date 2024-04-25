@@ -1,12 +1,17 @@
 import { Router } from "express";
 import * as controller from "../controllers/trips.contollers";
+import { validateSchema } from "../infraestructure/middlewares/validateSchema.middleware";
+import {
+  TripInsertSchema,
+  TripUpdateSchema,
+} from "../infraestructure/schemas/trip.schema";
 
 const router = Router();
 
 router.get("/", controller.getTrips);
 router.get("/:id", controller.getTripByID);
-router.post("/", controller.createTrip);
-router.put("/:id", controller.updateTrip);
+router.post("/", validateSchema(TripInsertSchema), controller.createTrip);
+router.put("/:id", validateSchema(TripUpdateSchema), controller.updateTrip);
 router.delete("/:id", controller.deleteTrip);
 
 export default router;

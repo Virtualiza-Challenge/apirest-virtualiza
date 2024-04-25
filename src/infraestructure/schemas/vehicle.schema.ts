@@ -1,13 +1,13 @@
 import { z } from "zod";
 
-export const DriverInsertSchema = z.object({
+export const VehicleInsertSchema = z.object({
   plate: z.string(),
   brand: z.string(),
   model: z.string(),
   year: z.number(),
 });
 
-export const DriverUpdateSchemaBase = z.object({
+export const VehicleUpdateSchema = z.object({
   plate: z.string().optional(),
   brand: z.string().optional(),
   model: z.string().optional(),

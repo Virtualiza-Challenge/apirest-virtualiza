@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const DriverInsertSchema = z.object({
+export const TripInsertSchema = z.object({
   date: z.string(),
   hour: z.string(),
   minutes: z.string(),
@@ -9,7 +9,7 @@ export const DriverInsertSchema = z.object({
   vehicle_id: z.number(),
 });
 
-export const DriverUpdateSchemaBase = z.object({
+export const TripUpdateSchema = z.object({
   date: z.string().optional(),
   hour: z.string().optional(),
   minutes: z.string().optional(),

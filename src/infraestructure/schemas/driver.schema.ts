@@ -11,7 +11,7 @@ export const DriverInsertSchema = z.object({
   emision_date: z.union([z.date(), z.string()]),
 });
 
-export const DriverUpdateSchemaBase = z.object({
+export const DriverUpdateSchema = z.object({
   name: z.string().optional(),
   surname: z.string().optional(),
   dni: z.string().optional(),
