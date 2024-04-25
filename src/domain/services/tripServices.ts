@@ -5,9 +5,9 @@ import { Trip } from "../models";
 import { DriverServices } from "./driverServices";
 import { VehicleServices } from "./vehicleServices";
 
-const getAll = async () => {
+const getAll = async (offset: number = 0, limit: number | null = null) => {
   const trips = await Trip.findAll({
-    attributes: ["date", "hour", "minutes", "kms"],
+    attributes: ["id", "date", "hour", "minutes", "kms"],
     include: [
       {
         association: "driver",
@@ -20,8 +20,13 @@ const getAll = async () => {
         attributes: ["plate", "brand", "model"],
       },
     ],
+    offset,
+    limit: limit !== null ? limit : undefined,
   });
-  return { count: trips.length, trips };
+
+  const count = await Trip.count();
+
+  return { count, trips };
 };
 
 const getByID = async (id: string) => {

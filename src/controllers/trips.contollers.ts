@@ -1,8 +1,10 @@
 import { Request, Response } from "express";
 import { TripServices } from "../domain/services";
 
-export const getTrips = async (_req: Request, res: Response) => {
-  const trips = await TripServices.getAll();
+export const getTrips = async (req: Request, res: Response) => {
+  const offset = Number(req.query._offset) || 0;
+  const limit = req.query._limit ? Number(req.query._limit) : null;
+  const trips = await TripServices.getAll(offset, limit);
   return res.send(trips);
 };
 
