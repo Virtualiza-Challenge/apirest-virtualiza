@@ -1,9 +1,19 @@
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import { DriverServices } from "../domain/services";
 
-export const getDrivers = async (_req: Request, res: Response) => {
-  const drivers = await DriverServices.getAll();
-  return res.json(drivers);
+export const getDrivers = async (
+  _req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const drivers = await DriverServices.getAll();
+    throw new Error("Error en la BD");
+
+    return res.json(drivers);
+  } catch (error) {
+    next(error);
+  }
 };
 
 export const getDriverByID = async (req: Request, res: Response) => {
