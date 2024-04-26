@@ -4,7 +4,7 @@ import { driverLicenseIsvalid } from "../../../helpers/driverLicenseIsvalid";
 
 export const checkLicenses = async (
   _req: Request,
-  res: Response,
+  _res: Response,
   next: NextFunction
 ) => {
   try {
@@ -21,7 +21,7 @@ export const checkLicenses = async (
 
     next();
   } catch (error) {
-    console.error("Error al verificar las licencias:", error);
-    res.status(500).json({ error: "Error interno del servidor" });
+    console.error("Error al verificar las licencias: ", error);
+    next(error);
   }
 };

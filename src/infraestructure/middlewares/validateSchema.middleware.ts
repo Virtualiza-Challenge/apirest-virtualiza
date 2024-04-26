@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import { AnyZodObject, ZodError } from "zod";
+import { jsonResponse } from "../../helpers/jsonResponse";
 
 export const validateSchema =
   (schema: AnyZodObject) =>
@@ -11,12 +12,20 @@ export const validateSchema =
       if (error instanceof ZodError) {
         console.log(error);
 
-        return res.status(400).json(
-          error.issues.map((issue) => ({
-            message: `${issue.code}:  ${issue.path} ➡️ ${issue.message}`,
-          }))
-        );
+        const issues = error.issues.map((issue) => ({
+          message: `${issue.code}:  ${issue.path} ➡️ ${issue.message}`,
+        }));
+
+        res
+          .status(400)
+          .json(
+            jsonResponse({
+              error: true,
+              result: issues,
+              message: "Schema validation!",
+            })
+          );
       }
-      return res.status(500).json({ message: "Internal server error!" });
+      next(error);
     }
   };

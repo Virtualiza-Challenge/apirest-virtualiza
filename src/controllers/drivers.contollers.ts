@@ -18,11 +18,9 @@ export const getDrivers: RequestHandler = async (_req, res, next) => {
 
 export const getDriverByID: RequestHandler = async (req, res, next) => {
   try {
-    const driverId = String(req.params.id);
+    const driver = await DriverServices.getByID(req.params.id);
 
-    const driver = await DriverServices.getByID(driverId);
-
-    return res.json(driver);
+    return res.json(jsonResponse({ result: driver }));
   } catch (error) {
     next(error);
   }
@@ -30,11 +28,9 @@ export const getDriverByID: RequestHandler = async (req, res, next) => {
 
 export const createDriver: RequestHandler = async (req, res, next) => {
   try {
-    const newDriver = req.body;
+    const driver = await DriverServices.create(req.body);
 
-    const driver = await DriverServices.create(newDriver);
-
-    return res.status(201).json(driver);
+    return res.status(201).json(jsonResponse({ result: driver }));
   } catch (error) {
     next(error);
   }
@@ -42,12 +38,9 @@ export const createDriver: RequestHandler = async (req, res, next) => {
 
 export const updateDriver: RequestHandler = async (req, res, next) => {
   try {
-    const driverId = req.params.id;
-    const bodyDriver = req.body;
+    const success = await DriverServices.update(req.params.id, req.body);
 
-    const success = await DriverServices.update(driverId, bodyDriver);
-
-    return res.json(success);
+    return res.json(jsonResponse({ result: success }));
   } catch (error) {
     next(error);
   }
@@ -55,11 +48,9 @@ export const updateDriver: RequestHandler = async (req, res, next) => {
 
 export const deleteDriver: RequestHandler = async (req, res, next) => {
   try {
-    const driverId = req.params.id;
+    const success = await DriverServices.destroy(req.params.id);
 
-    const success = await DriverServices.destroy(driverId);
-
-    return res.json({ success });
+    return res.json(jsonResponse({ result: success }));
   } catch (error) {
     next(error);
   }
