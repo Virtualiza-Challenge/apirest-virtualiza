@@ -3,6 +3,15 @@ import { VehicleAttributes } from "../../interfaces/Vehicle";
 import { RESET_KMS_VEHICLE, SERVICE_MILEAGE } from "../constants";
 import { Vehicle } from "../models";
 
+const getInServices = async ({ offset, limit }: FilterAttibutes) => {
+  const vehicles = await Vehicle.findAll({
+    offset,
+    limit,
+    where: { is_available: false },
+  });
+  return { count: vehicles.length, vehicles };
+};
+
 const getAll = async ({ offset, limit }: FilterAttibutes) => {
   const vehicles = await Vehicle.findAll({ offset, limit });
   return { count: vehicles.length, vehicles };
@@ -59,4 +68,5 @@ export const VehicleServices = {
   destroy,
   ready,
   loadMileage,
+  getInServices,
 };
