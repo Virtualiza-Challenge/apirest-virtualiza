@@ -29,6 +29,15 @@ export const getTripByID: RequestHandler = async (req, res, next) => {
   }
 };
 
+export const getTripByIDPopulate: RequestHandler = async (req, res, next) => {
+  try {
+    const trip = await TripServices.getByIDPopulate(req.params.id);
+    return res.json(jsonResponse({ result: trip }));
+  } catch (error) {
+    next(error);
+  }
+};
+
 export const createTrip: RequestHandler = async (req, res, next) => {
   try {
     const trip = await TripServices.create(req.body);

@@ -8,7 +8,7 @@ import { FilterAttibutes } from "../../helpers/applyFilters";
 
 const getAll = async ({ offset, limit }: FilterAttibutes) => {
   const trips = await Trip.findAll({
-    attributes: ["id", "date", "hour", "minutes", "kms"],
+    attributes: { exclude: ["driver_id", "vehicle_id"] },
     include: [
       {
         association: "driver",
@@ -31,7 +31,28 @@ const getAll = async ({ offset, limit }: FilterAttibutes) => {
 };
 
 const getByID = async (id: string) => {
-  const trip = await Trip.findByPk(id);
+  const trip = await Trip.findByPk(id, {
+    attributes: { exclude: ["driver_id", "vehicle_id"] },
+  });
+  return trip;
+};
+
+const getByIDPopulate = async (id: string) => {
+  const trip = await Trip.findByPk(id, {
+    attributes: { exclude: ["driver_id", "vehicle_id"] },
+    include: [
+      {
+        association: "driver",
+        where: { isActive: true },
+        attributes: ["name", "surname"],
+      },
+      {
+        association: "vehicle",
+        where: { isActive: true },
+        attributes: ["plate", "brand", "model"],
+      },
+    ],
+  });
   return trip;
 };
 
@@ -89,6 +110,7 @@ const drivenKmsByID = async (id: number) => {
 export const TripServices = {
   getAll,
   getByID,
+  getByIDPopulate,
   create,
   update,
   destroy,
