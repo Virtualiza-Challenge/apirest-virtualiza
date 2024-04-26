@@ -1,50 +1,60 @@
-import { NextFunction, Request, Response } from "express";
+import { RequestHandler } from "express";
 import { DriverServices } from "../domain/services";
 
-export const getDrivers = async (
-  _req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+export const getDrivers: RequestHandler = async (_req, res, next) => {
   try {
     const drivers = await DriverServices.getAll();
-    throw new Error("Error en la BD");
-
     return res.json(drivers);
   } catch (error) {
     next(error);
   }
 };
 
-export const getDriverByID = async (req: Request, res: Response) => {
-  const driverId = String(req.params.id);
+export const getDriverByID: RequestHandler = async (req, res, next) => {
+  try {
+    const driverId = String(req.params.id);
 
-  const driver = await DriverServices.getByID(driverId);
+    const driver = await DriverServices.getByID(driverId);
 
-  return res.json(driver);
+    return res.json(driver);
+  } catch (error) {
+    next(error);
+  }
 };
 
-export const createDriver = async (req: Request, res: Response) => {
-  const newDriver = req.body;
+export const createDriver: RequestHandler = async (req, res, next) => {
+  try {
+    const newDriver = req.body;
 
-  const driver = await DriverServices.create(newDriver);
+    const driver = await DriverServices.create(newDriver);
 
-  return res.status(201).json(driver);
+    return res.status(201).json(driver);
+  } catch (error) {
+    next(error);
+  }
 };
 
-export const updateDriver = async (req: Request, res: Response) => {
-  const driverId = req.params.id;
-  const bodyDriver = req.body;
+export const updateDriver: RequestHandler = async (req, res, next) => {
+  try {
+    const driverId = req.params.id;
+    const bodyDriver = req.body;
 
-  const success = await DriverServices.update(driverId, bodyDriver);
+    const success = await DriverServices.update(driverId, bodyDriver);
 
-  return res.json(success);
+    return res.json(success);
+  } catch (error) {
+    next(error);
+  }
 };
 
-export const deleteDriver = async (req: Request, res: Response) => {
-  const driverId = req.params.id;
+export const deleteDriver: RequestHandler = async (req, res, next) => {
+  try {
+    const driverId = req.params.id;
 
-  const success = await DriverServices.destroy(driverId);
+    const success = await DriverServices.destroy(driverId);
 
-  return res.json({ success });
+    return res.json({ success });
+  } catch (error) {
+    next(error);
+  }
 };
