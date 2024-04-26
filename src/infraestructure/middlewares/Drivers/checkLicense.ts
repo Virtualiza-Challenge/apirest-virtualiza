@@ -10,7 +10,7 @@ export const checkLicense = async (
   const driverId = req.params.id;
   const driver = await DriverServices.getByID(driverId);
 
-  if (!driver) return res.send("Driver not found!");
+  if (!driver) return res.json(driver);
 
   const emision_date = driver?.dataValues.emision_date;
   const license_type = driver?.dataValues.license_type;

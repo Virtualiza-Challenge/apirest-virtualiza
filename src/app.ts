@@ -1,9 +1,9 @@
 import cors from "cors";
 import express from "express";
 import driversRoutes from "./routes/drivers.routes";
-import { Paths } from "./routes/paths";
 import tripsRoutes from "./routes/trips.routes";
 import vehiclesRoutes from "./routes/vehicles.routes";
+import { Paths } from "./routes/paths";
 
 export const app = express();
 

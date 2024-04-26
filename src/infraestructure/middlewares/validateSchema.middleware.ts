@@ -9,6 +9,8 @@ export const validateSchema =
       next();
     } catch (error) {
       if (error instanceof ZodError) {
+        console.log(error);
+
         return res.status(400).json(
           error.issues.map((issue) => ({
             message: `${issue.code}:  ${issue.path} ➡️ ${issue.message}`,

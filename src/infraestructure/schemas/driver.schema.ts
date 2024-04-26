@@ -6,7 +6,6 @@ export const DriverInsertSchema = z.object({
   name: z.string(),
   surname: z.string(),
   dni: z.string(),
-  license: z.string(),
   license_type: z.enum(LicenseType),
   emision_date: z.union([z.date(), z.string()]),
 });
