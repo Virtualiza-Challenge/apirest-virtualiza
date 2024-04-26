@@ -31,12 +31,7 @@ const getAll = async ({ offset, limit }: FilterAttibutes) => {
   });
 };
 
-const getByID = async (id: string) => {
-  return await Trip.findByPk(id, {
-    attributes: { exclude: ["driver_id", "vehicle_id"] },
-  });
-};
-
+//?? Busqueda poblada de entidades asociadas por ID
 const getByIDPopulate = async (id: string) => {
   return await Trip.findByPk(id, {
     attributes: { exclude: ["driver_id", "vehicle_id"] },
@@ -52,6 +47,12 @@ const getByIDPopulate = async (id: string) => {
         attributes: ["plate", "brand", "model"],
       },
     ],
+  });
+};
+
+const getByID = async (id: string) => {
+  return await Trip.findByPk(id, {
+    attributes: { exclude: ["driver_id", "vehicle_id"] },
   });
 };
 
@@ -104,6 +105,11 @@ const drivenKmsByDriverID = async (id: number) => {
   });
 };
 
+/** ------------ Servicios para el Dashboard --------------------- */
+
+/**
+ *  Ranking de choferes con mayor rentabilidad
+ */
 const getDriversTopRanking = async ({ limit }: FilterAttibutes) => {
   return await Trip.findAll({
     where: {
@@ -137,6 +143,9 @@ const getDriversTopRanking = async ({ limit }: FilterAttibutes) => {
   });
 };
 
+/**
+ * Listado de vehiculos con su kilometraje mensual
+ */
 const getVehiclesWithKmsDrivenMonthly = async ({ limit }: FilterAttibutes) => {
   return await Trip.findAll({
     where: {
@@ -160,6 +169,39 @@ const getVehiclesWithKmsDrivenMonthly = async ({ limit }: FilterAttibutes) => {
   });
 };
 
+/**
+ * Resumen mensual de kilometros de vehiculos y sus choferes
+ */
+const monthlySummary = async ({ limit }: FilterAttibutes) => {
+  return await Trip.findAll({
+    where: {
+      date: {
+        [Op.between]: [FIRST_DAY_OF_MONTH, LAST_DAY_OF_MONTH],
+      },
+    },
+    attributes: [
+      "vehicle_id",
+      "driver_id",
+      [sequelize.fn("sum", sequelize.col("trips.kms")), "driven_kms"], // Suma los kilómetros recorridos por cada vehículo
+    ],
+    include: [
+      {
+        association: "vehicle",
+        where: { isActive: true },
+        attributes: ["id", "plate", "kms"],
+      },
+      {
+        association: "driver",
+        where: { isActive: true },
+        attributes: ["id", "name", "surname", "dni"],
+      },
+    ],
+    group: ["vehicle_id", "driver_id"],
+    order: [[sequelize.literal("driven_kms"), "DESC"]], // Ordena en orden descendente por los kilómetros acumulados
+    limit,
+  });
+};
+
 export const TripServices = {
   getAll,
   getByID,
@@ -170,4 +212,5 @@ export const TripServices = {
   drivenKmsByDriverID,
   getDriversTopRanking,
   getVehiclesWithKmsDrivenMonthly,
+  monthlySummary,
 };

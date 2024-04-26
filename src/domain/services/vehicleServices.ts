@@ -4,10 +4,12 @@ import { RESET_KMS_VEHICLE, SERVICE_MILEAGE } from "../constants";
 import { Vehicle } from "../models";
 import { TripServices } from "./tripServices";
 
+//!! El listado de vehiculos con su kilometraje mensual es delegado al servicio de viajes
 const getAllWithKmsDrivenMonthly = async (filters: FilterAttibutes) => {
   return await TripServices.getVehiclesWithKmsDrivenMonthly(filters);
 };
 
+//?? Listado de vehiculos en el taller
 const getInServices = async ({ offset, limit }: FilterAttibutes) => {
   return await Vehicle.findAll({
     offset,
@@ -16,8 +18,8 @@ const getInServices = async ({ offset, limit }: FilterAttibutes) => {
   });
 };
 
-const getAll = async ({ offset, limit }: FilterAttibutes) => {
-  return await Vehicle.findAll({ offset, limit });
+const getAll = async (filters: FilterAttibutes) => {
+  return await Vehicle.findAll(filters);
 };
 
 const getByID = async (id: string) => {
@@ -39,6 +41,7 @@ const destroy = async (id: string) => {
   return { success: result > 0 };
 };
 
+//?? Método para acumular los kms en cada viaje
 const loadMileage = async (id: number, mileage: number) => {
   const vehicle = await VehicleServices.getByID(id + "");
 
@@ -54,6 +57,7 @@ const loadMileage = async (id: number, mileage: number) => {
   return { success: result > 0 };
 };
 
+//?? Método para resetear el contador de kms para el services
 const ready = async (id: string) => {
   const [result] = await Vehicle.update(
     { kms: RESET_KMS_VEHICLE },

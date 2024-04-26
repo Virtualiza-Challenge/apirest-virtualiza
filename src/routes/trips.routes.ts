@@ -8,6 +8,7 @@ import {
 
 const router = Router();
 
+router.get("/monthly-summary", controller.monthlySummary);
 router.get("/", controller.getTrips);
 router.get("/:id", controller.getTripByID);
 router.get("/:id/driver/vehicle", controller.getTripByIDPopulate);

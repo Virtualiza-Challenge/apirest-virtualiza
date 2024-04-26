@@ -3,6 +3,23 @@ import { TripServices } from "../domain/services";
 import { jsonResponse } from "../helpers/jsonResponse";
 import { applyFilters } from "../helpers/applyFilters";
 
+export const monthlySummary: RequestHandler = async (req, res, next) => {
+  try {
+    const filters = applyFilters(req);
+
+    const result = await TripServices.monthlySummary(filters);
+
+    return res.json(
+      jsonResponse({
+        count: result.length,
+        result,
+      })
+    );
+  } catch (error) {
+    next(error);
+  }
+};
+
 export const getTrips: RequestHandler = async (req, res, next) => {
   try {
     const filters = applyFilters(req);

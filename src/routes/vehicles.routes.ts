@@ -13,6 +13,7 @@ router.get("/in-services", controller.getVehiclesInServices);
 router.get("/", controller.getVehicles);
 router.get("/:id", controller.getVehicleByID);
 router.post("/", validateSchema(VehicleInsertSchema), controller.createVehicle);
+router.post("/:id", controller.readyVehicle);
 router.put(
   "/:id",
   validateSchema(VehicleUpdateSchema),

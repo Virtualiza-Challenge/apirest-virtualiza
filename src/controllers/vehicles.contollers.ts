@@ -87,3 +87,12 @@ export const deleteVehicle: RequestHandler = async (req, res, next) => {
     next(error);
   }
 };
+
+export const readyVehicle: RequestHandler = async (req, res, next) => {
+  try {
+    const success = await VehicleServices.ready(req.params.id);
+    return res.json(jsonResponse({ result: success }));
+  } catch (error) {
+    next(error);
+  }
+};

@@ -5,10 +5,12 @@ import { WAHE_MONTH } from "../constants";
 import { Driver } from "../models";
 import { TripServices } from "./tripServices";
 
+//!! El ranking de choferes rentables se delega al servicio de viajes
 const getTopRanking = async (filters: FilterAttibutes) => {
   return await TripServices.getDriversTopRanking(filters);
 };
 
+//?? Listado de choferes inhabilitados
 const getUnableToDrive = async ({ offset, limit }: FilterAttibutes) => {
   return await Driver.findAll({
     offset,
@@ -76,6 +78,7 @@ const destroy = async (id: string) => {
   return { success: result > 0 };
 };
 
+//!! Método para invalidar la licencia de un chofer
 const invalidateLicense = async (id: number) => {
   const [result] = await Driver.update(
     { able_to_drive: false },
