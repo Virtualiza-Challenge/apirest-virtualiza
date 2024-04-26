@@ -8,21 +8,26 @@ describe("Pruebas en el endpoint /drivers - GET", () => {
     expect(res.status).toEqual(200);
   });
 
-  test("Debe devolver la cantidad de choferes y el array de los mismos.", async () => {
+  test(`Estructura de respuesta { count: number; result: any; error: boolean; message: any}`, async () => {
     const res = await api.get("/drivers");
 
-    expect(res.body).toBeDefined();
+    expect(res.body).toEqual(expect.any(Object));
+    expect(res.body.count).toBeDefined();
+    expect(res.body.result).toBeDefined();
+    expect(res.body.error).toBeFalsy();
+    expect(res.body.message).toBeFalsy();
+  });
+
+  test("Retorna los choferes y cantidad existente.", async () => {
+    const res = await api.get("/drivers");
+
     expect(res.body.count).toEqual(expect.any(Number));
-    expect(res.body.drivers).toEqual(expect.any(Array));
+    expect(res.body.result).toEqual(expect.any(Array));
   });
 
   test("Debe devolver 'false' si no encuentra el chofer por ID.", async () => {
-    const res = await api.get("/drivers/100");
+    const res = await api.get("/drivers/999999");
 
-    expect(res.body).toBeFalsy();
+    expect(res.body.result).toBeFalsy();
   });
 });
-
-// afterAll(async () => {
-//   await closeConnectionDB();
-// });
