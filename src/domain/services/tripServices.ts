@@ -113,7 +113,7 @@ const getDriversTopRanking = async ({ limit }: FilterAttibutes) => {
     },
     attributes: [
       [sequelize.fn("sum", sequelize.col("kms")), "driven_kms"], // Suma los kilómetros conducidos por cada conductor
-      [sequelize.literal(`SUM(kms * ${WAHE_MONTH})`), "wage_month"], // Calcula el salario mensual basado en los kilómetros conducidos
+      [sequelize.literal(`SUM(kms * ${WAHE_MONTH})`), "wage_month"], // Calcula el salario mensual basado en los kilómetros recorridos
     ],
     include: [
       {
@@ -137,6 +137,29 @@ const getDriversTopRanking = async ({ limit }: FilterAttibutes) => {
   });
 };
 
+const getVehiclesWithKmsDrivenMonthly = async ({ limit }: FilterAttibutes) => {
+  return await Trip.findAll({
+    where: {
+      date: {
+        [Op.between]: [FIRST_DAY_OF_MONTH, LAST_DAY_OF_MONTH],
+      },
+    },
+    attributes: [
+      [sequelize.fn("sum", sequelize.col("trips.kms")), "driven_kms"], // Suma los kilómetros recorridos por cada vehículo
+    ],
+    include: [
+      {
+        association: "vehicle",
+        where: { isActive: true },
+        attributes: ["id", "plate", "brand", "model", "year", "kms"],
+      },
+    ],
+    group: ["vehicle_id"],
+    order: [[sequelize.literal("driven_kms"), "DESC"]], // Ordena en orden descendente por los kilómetros acumulados
+    limit,
+  });
+};
+
 export const TripServices = {
   getAll,
   getByID,
@@ -146,4 +169,5 @@ export const TripServices = {
   destroy,
   drivenKmsByDriverID,
   getDriversTopRanking,
+  getVehiclesWithKmsDrivenMonthly,
 };

@@ -2,6 +2,11 @@ import { FilterAttibutes } from "../../helpers/applyFilters";
 import { VehicleAttributes } from "../../interfaces/Vehicle";
 import { RESET_KMS_VEHICLE, SERVICE_MILEAGE } from "../constants";
 import { Vehicle } from "../models";
+import { TripServices } from "./tripServices";
+
+const getAllWithKmsDrivenMonthly = async (filters: FilterAttibutes) => {
+  return await TripServices.getVehiclesWithKmsDrivenMonthly(filters);
+};
 
 const getInServices = async ({ offset, limit }: FilterAttibutes) => {
   return await Vehicle.findAll({
@@ -66,4 +71,5 @@ export const VehicleServices = {
   ready,
   loadMileage,
   getInServices,
+  getAllWithKmsDrivenMonthly,
 };

@@ -8,6 +8,7 @@ import {
 
 const router = Router();
 
+router.get("/kms-driven-monthly", controller.getVehiclesWithKmsDrivenMonthly);
 router.get("/in-services", controller.getVehiclesInServices);
 router.get("/", controller.getVehicles);
 router.get("/:id", controller.getVehicleByID);

@@ -3,6 +3,25 @@ import { VehicleServices } from "../domain/services";
 import { jsonResponse } from "../helpers/jsonResponse";
 import { applyFilters } from "../helpers/applyFilters";
 
+export const getVehiclesWithKmsDrivenMonthly: RequestHandler = async (
+  req,
+  res,
+  next
+) => {
+  try {
+    const filters = applyFilters(req);
+    const result = await VehicleServices.getAllWithKmsDrivenMonthly(filters);
+    return res.json(
+      jsonResponse({
+        count: result.length,
+        result,
+      })
+    );
+  } catch (error) {
+    next(error);
+  }
+};
+
 export const getVehiclesInServices: RequestHandler = async (req, res, next) => {
   try {
     const filters = applyFilters(req);
