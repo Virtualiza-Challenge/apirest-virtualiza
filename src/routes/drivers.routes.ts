@@ -10,6 +10,7 @@ import {
 
 const router = Router();
 
+router.get("/top-ranking", checkLicenses, controller.getDriversTopRanking);
 router.get(
   "/unable-to-drive",
   checkLicenses,

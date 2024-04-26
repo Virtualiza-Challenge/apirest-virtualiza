@@ -5,23 +5,27 @@ import { WAHE_MONTH } from "../constants";
 import { Driver } from "../models";
 import { TripServices } from "./tripServices";
 
+const getTopRanking = async (filters: FilterAttibutes) => {
+  return await TripServices.getDriversTopRanking(filters);
+};
+
 const getUnableToDrive = async ({ offset, limit }: FilterAttibutes) => {
-  const drivers = await Driver.findAll({
+  return await Driver.findAll({
     offset,
     limit,
     where: { able_to_drive: false },
   });
-
-  return { count: drivers.length, drivers };
 };
 
 const getAll = async ({ offset, limit }: FilterAttibutes) => {
-  const drivers = await Driver.findAll({
+  return await Driver.findAll({
     offset,
     limit,
   }).then(async (drivers) => {
     for (const driver of drivers) {
-      const totalKMS = await TripServices.drivenKmsByID(driver.dataValues.id);
+      const totalKMS = await TripServices.drivenKmsByDriverID(
+        driver.dataValues.id
+      );
 
       if (totalKMS > 0) {
         const wage_month = totalKMS * WAHE_MONTH;
@@ -29,11 +33,8 @@ const getAll = async ({ offset, limit }: FilterAttibutes) => {
         driver.dataValues.driven_kms = totalKMS ?? 0;
       }
     }
-
     return drivers;
   });
-
-  return { count: drivers.length, drivers };
 };
 
 const getByID = async (id: string) => {
@@ -41,7 +42,7 @@ const getByID = async (id: string) => {
 
   if (!driver) return false;
 
-  const totalKMS = await TripServices.drivenKmsByID(driver.dataValues.id);
+  const totalKMS = await TripServices.drivenKmsByDriverID(driver.dataValues.id);
 
   if (totalKMS > 0) {
     const wage_month = totalKMS * WAHE_MONTH;
@@ -84,6 +85,7 @@ const invalidateLicense = async (id: number) => {
 };
 
 export const DriverServices = {
+  getTopRanking,
   getUnableToDrive,
   getAll,
   getByID,

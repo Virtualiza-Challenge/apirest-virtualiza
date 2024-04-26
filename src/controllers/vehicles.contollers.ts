@@ -9,8 +9,8 @@ export const getVehiclesInServices: RequestHandler = async (req, res, next) => {
     const result = await VehicleServices.getInServices(filters);
     return res.json(
       jsonResponse({
-        count: result.count,
-        result: result.vehicles,
+        count: result.length,
+        result,
       })
     );
   } catch (error) {
@@ -24,8 +24,8 @@ export const getVehicles: RequestHandler = async (req, res, next) => {
     const result = await VehicleServices.getAll(filters);
     return res.json(
       jsonResponse({
-        count: result.count,
-        result: result.vehicles,
+        count: result.length,
+        result,
       })
     );
   } catch (error) {

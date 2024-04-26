@@ -1,13 +1,18 @@
 import { Op } from "sequelize";
 import { TripAttributes } from "../../interfaces/Trip";
-import { FIRST_DAY_OF_MONTH, LAST_DAY_OF_MONTH } from "../constants";
+import {
+  FIRST_DAY_OF_MONTH,
+  LAST_DAY_OF_MONTH,
+  WAHE_MONTH,
+} from "../constants";
 import { Trip } from "../models";
 import { DriverServices } from "./driverServices";
 import { VehicleServices } from "./vehicleServices";
 import { FilterAttibutes } from "../../helpers/applyFilters";
+import sequelize from "../../infraestructure/database";
 
 const getAll = async ({ offset, limit }: FilterAttibutes) => {
-  const trips = await Trip.findAll({
+  return await Trip.findAll({
     attributes: { exclude: ["driver_id", "vehicle_id"] },
     include: [
       {
@@ -24,21 +29,16 @@ const getAll = async ({ offset, limit }: FilterAttibutes) => {
     offset,
     limit,
   });
-
-  const count = await Trip.count();
-
-  return { count, trips };
 };
 
 const getByID = async (id: string) => {
-  const trip = await Trip.findByPk(id, {
+  return await Trip.findByPk(id, {
     attributes: { exclude: ["driver_id", "vehicle_id"] },
   });
-  return trip;
 };
 
 const getByIDPopulate = async (id: string) => {
-  const trip = await Trip.findByPk(id, {
+  return await Trip.findByPk(id, {
     attributes: { exclude: ["driver_id", "vehicle_id"] },
     include: [
       {
@@ -53,7 +53,6 @@ const getByIDPopulate = async (id: string) => {
       },
     ],
   });
-  return trip;
 };
 
 const create = async (aDriver: TripAttributes) => {
@@ -94,8 +93,8 @@ const destroy = async (id: string) => {
   return { success: result > 0 };
 };
 
-const drivenKmsByID = async (id: number) => {
-  const totalKMS = await Trip.sum("kms", {
+const drivenKmsByDriverID = async (id: number) => {
+  return await Trip.sum("kms", {
     where: {
       driver_id: id,
       date: {
@@ -103,8 +102,39 @@ const drivenKmsByID = async (id: number) => {
       },
     },
   });
+};
 
-  return totalKMS;
+const getDriversTopRanking = async ({ limit }: FilterAttibutes) => {
+  return await Trip.findAll({
+    where: {
+      date: {
+        [Op.between]: [FIRST_DAY_OF_MONTH, LAST_DAY_OF_MONTH],
+      },
+    },
+    attributes: [
+      [sequelize.fn("sum", sequelize.col("kms")), "driven_kms"], // Suma los kilómetros conducidos por cada conductor
+      [sequelize.literal(`SUM(kms * ${WAHE_MONTH})`), "wage_month"], // Calcula el salario mensual basado en los kilómetros conducidos
+    ],
+    include: [
+      {
+        association: "driver",
+        where: { isActive: true },
+        attributes: [
+          "id",
+          "name",
+          "surname",
+          "dni",
+          "license",
+          "license_type",
+          "emision_date",
+          "able_to_drive",
+        ],
+      },
+    ],
+    group: ["driver_id"],
+    order: [[sequelize.literal("driven_kms"), "DESC"]], // Ordena en orden descendente por los kilómetros conducidos
+    limit,
+  });
 };
 
 export const TripServices = {
@@ -114,5 +144,6 @@ export const TripServices = {
   create,
   update,
   destroy,
-  drivenKmsByID,
+  drivenKmsByDriverID,
+  getDriversTopRanking,
 };

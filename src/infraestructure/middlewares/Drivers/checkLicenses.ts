@@ -10,9 +10,9 @@ export const checkLicenses = async (
 ) => {
   try {
     const filters = applyFilters(req);
-    const result = await DriverServices.getAll(filters);
+    const drivers = await DriverServices.getAll(filters);
 
-    for (const driver of result.drivers) {
+    for (const driver of drivers) {
       const emision_date = driver?.dataValues.emision_date;
       const license_type = driver?.dataValues.license_type;
 

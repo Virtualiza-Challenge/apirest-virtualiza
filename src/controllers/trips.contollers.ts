@@ -11,8 +11,8 @@ export const getTrips: RequestHandler = async (req, res, next) => {
 
     return res.json(
       jsonResponse({
-        count: result.count,
-        result: result.trips,
+        count: result.length,
+        result,
       })
     );
   } catch (error) {

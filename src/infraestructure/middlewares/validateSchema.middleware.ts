@@ -10,21 +10,12 @@ export const validateSchema =
       next();
     } catch (error) {
       if (error instanceof ZodError) {
-        console.log(error);
-
-        const issues = error.issues.map((issue) => ({
-          message: `${issue.code}:  ${issue.path} ➡️ ${issue.message}`,
-        }));
-
-        res
+        // const issues = error.issues.map((issue) => ({
+        //   message: `${issue.code}:  ${issue.path} ➡️ ${issue.message}`,
+        // }));
+        return res
           .status(400)
-          .json(
-            jsonResponse({
-              error: true,
-              result: issues,
-              message: "Schema validation!",
-            })
-          );
+          .json(jsonResponse({ error: true, message: error }));
       }
       next(error);
     }

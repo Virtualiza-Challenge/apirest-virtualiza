@@ -4,22 +4,19 @@ import { RESET_KMS_VEHICLE, SERVICE_MILEAGE } from "../constants";
 import { Vehicle } from "../models";
 
 const getInServices = async ({ offset, limit }: FilterAttibutes) => {
-  const vehicles = await Vehicle.findAll({
+  return await Vehicle.findAll({
     offset,
     limit,
     where: { is_available: false },
   });
-  return { count: vehicles.length, vehicles };
 };
 
 const getAll = async ({ offset, limit }: FilterAttibutes) => {
-  const vehicles = await Vehicle.findAll({ offset, limit });
-  return { count: vehicles.length, vehicles };
+  return await Vehicle.findAll({ offset, limit });
 };
 
 const getByID = async (id: string) => {
-  const vehicle = await Vehicle.findByPk(id);
-  return vehicle;
+  return await Vehicle.findByPk(id);
 };
 
 const create = async (aVehicle: VehicleAttributes) => {

@@ -3,6 +3,21 @@ import { DriverServices } from "../domain/services";
 import { jsonResponse } from "../helpers/jsonResponse";
 import { applyFilters } from "../helpers/applyFilters";
 
+export const getDriversTopRanking: RequestHandler = async (req, res, next) => {
+  try {
+    const filters = applyFilters(req);
+    const result = await DriverServices.getTopRanking(filters);
+    return res.json(
+      jsonResponse({
+        count: result.length,
+        result,
+      })
+    );
+  } catch (error) {
+    next(error);
+  }
+};
+
 export const getDriversUnableToDrive: RequestHandler = async (
   req,
   res,
@@ -13,8 +28,8 @@ export const getDriversUnableToDrive: RequestHandler = async (
     const result = await DriverServices.getUnableToDrive(filters);
     return res.json(
       jsonResponse({
-        count: result.count,
-        result: result.drivers,
+        count: result.length,
+        result,
       })
     );
   } catch (error) {
@@ -28,8 +43,8 @@ export const getDrivers: RequestHandler = async (req, res, next) => {
     const result = await DriverServices.getAll(filters);
     return res.json(
       jsonResponse({
-        count: result.count,
-        result: result.drivers,
+        count: result.length,
+        result,
       })
     );
   } catch (error) {
