@@ -5,18 +5,20 @@ beforeAll(async () => {
   await resetDB();
 });
 
-describe("Pruebas en el endpoint drivers - POST", () => {
-  test("Debe retornar un status 200", async () => {
-    const res = await api.post("/drivers").send({
-      name: "Niko",
-      surname: "Brain",
-      dni: "34422345",
-      license_type: "Professional",
-      emision_date: "2022-06-06",
-    });
-    console.log(res.body);
+const driver_niko = {
+  name: "Niko",
+  surname: "Brain",
+  dni: "34422345",
+  license_type: "Professional",
+  emision_date: "2022-06-06",
+};
 
-    expect(res.status).toBe(200);
+describe("Pruebas en el endpoint /drivers - POST", () => {
+  test("Debe retornar un status 201 y el ID.", async () => {
+    const res = await api.post("/drivers").send(driver_niko);
+
+    expect(res.status).toBe(201);
+    expect(res.body.id).toBeDefined();
   });
 });
 

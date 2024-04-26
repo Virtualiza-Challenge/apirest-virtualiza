@@ -1,6 +1,6 @@
 import { api } from "../../setup";
 
-describe("Pruebas en el método GET", () => {
+describe("Pruebas en el endpoint /drivers - GET", () => {
   test("Debe retornar un status 200", async () => {
     const res = await api
       .get("/drivers")

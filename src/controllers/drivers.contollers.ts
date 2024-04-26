@@ -19,7 +19,7 @@ export const createDriver = async (req: Request, res: Response) => {
 
   const driver = await DriverServices.create(newDriver);
 
-  return res.json(driver);
+  return res.status(201).json(driver);
 };
 
 export const updateDriver = async (req: Request, res: Response) => {
