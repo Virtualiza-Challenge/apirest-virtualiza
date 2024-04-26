@@ -10,6 +10,11 @@ import {
 
 const router = Router();
 
+router.get(
+  "/unable-to-drive",
+  checkLicenses,
+  controller.getDriversUnableToDrive
+);
 router.get("/", checkLicenses, controller.getDrivers);
 router.get("/:id", checkLicense, controller.getDriverByID);
 router.post("/", validateSchema(DriverInsertSchema), controller.createDriver);

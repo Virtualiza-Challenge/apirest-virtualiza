@@ -5,6 +5,16 @@ import { WAHE_MONTH } from "../constants";
 import { Driver } from "../models";
 import { TripServices } from "./tripServices";
 
+const getUnableToDrive = async ({ offset, limit }: FilterAttibutes) => {
+  const drivers = await Driver.findAll({
+    offset,
+    limit,
+    where: { able_to_drive: false },
+  });
+
+  return { count: drivers.length, drivers };
+};
+
 const getAll = async ({ offset, limit }: FilterAttibutes) => {
   const drivers = await Driver.findAll({
     offset,
@@ -74,6 +84,7 @@ const invalidateLicense = async (id: number) => {
 };
 
 export const DriverServices = {
+  getUnableToDrive,
   getAll,
   getByID,
   create,
