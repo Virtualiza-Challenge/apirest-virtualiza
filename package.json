@@ -7,7 +7,9 @@
     "tsc": "tsc",
     "dev": "NODE_ENV=dev ts-node-dev src/index.ts",
     "start-build": "node build/index.js",
-    "test": "NODE_ENV=test jest --watch --verbose --detectOpenHandles"
+    "test": "NODE_ENV=test jest --watch --verbose --detectOpenHandles",
+    "test:coverage": "NODE_ENV=test jest --collect-coverage",
+    "test:report": "NODE_ENV=test jest  --coverage --coverageReporters='json-summary'" 
   },
   "keywords": [
     "Node",
