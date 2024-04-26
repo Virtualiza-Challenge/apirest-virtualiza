@@ -21,3 +21,10 @@ export const vehicle_unavailable = {
   kms: 15000,
   is_available: false,
 };
+
+export const trip_available = {
+  date: "2024-04-19",
+  hour: "18",
+  minutes: "49",
+  kms: 3000,
+};
