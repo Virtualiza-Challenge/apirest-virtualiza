@@ -60,7 +60,7 @@ const loadMileage = async (id: number, mileage: number) => {
 //?? Método para resetear el contador de kms para el services
 const ready = async (id: string) => {
   const [result] = await Vehicle.update(
-    { kms: RESET_KMS_VEHICLE },
+    { kms: RESET_KMS_VEHICLE, is_available: true },
     { where: { id } }
   );
   return { success: result > 0 };
