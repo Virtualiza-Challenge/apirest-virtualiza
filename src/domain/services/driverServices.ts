@@ -1,11 +1,15 @@
+import { FilterAttibutes } from "../../helpers/applyFilters";
 import { driverLicenseIsvalid } from "../../helpers/driverLicenseIsvalid";
 import { DriverAttributes } from "../../interfaces/Driver";
 import { WAHE_MONTH } from "../constants";
 import { Driver } from "../models";
 import { TripServices } from "./tripServices";
 
-const getAll = async () => {
-  const drivers = await Driver.findAll().then(async (drivers) => {
+const getAll = async ({ offset, limit }: FilterAttibutes) => {
+  const drivers = await Driver.findAll({
+    offset,
+    limit,
+  }).then(async (drivers) => {
     for (const driver of drivers) {
       const totalKMS = await TripServices.drivenKmsByID(driver.dataValues.id);
 

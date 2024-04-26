@@ -1,10 +1,12 @@
 import { RequestHandler } from "express";
 import { DriverServices } from "../domain/services";
 import { jsonResponse } from "../helpers/jsonResponse";
+import { applyFilters } from "../helpers/applyFilters";
 
-export const getDrivers: RequestHandler = async (_req, res, next) => {
+export const getDrivers: RequestHandler = async (req, res, next) => {
   try {
-    const result = await DriverServices.getAll();
+    const filters = applyFilters(req);
+    const result = await DriverServices.getAll(filters);
     return res.json(
       jsonResponse({
         count: result.count,

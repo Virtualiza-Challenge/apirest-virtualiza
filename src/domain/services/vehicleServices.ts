@@ -1,9 +1,10 @@
+import { FilterAttibutes } from "../../helpers/applyFilters";
 import { VehicleAttributes } from "../../interfaces/Vehicle";
 import { RESET_KMS_VEHICLE, SERVICE_MILEAGE } from "../constants";
 import { Vehicle } from "../models";
 
-const getAll = async () => {
-  const vehicles = await Vehicle.findAll();
+const getAll = async ({ offset, limit }: FilterAttibutes) => {
+  const vehicles = await Vehicle.findAll({ offset, limit });
   return { count: vehicles.length, vehicles };
 };
 

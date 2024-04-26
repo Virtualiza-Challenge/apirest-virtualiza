@@ -1,13 +1,13 @@
 import { RequestHandler } from "express";
 import { TripServices } from "../domain/services";
 import { jsonResponse } from "../helpers/jsonResponse";
+import { applyFilters } from "../helpers/applyFilters";
 
 export const getTrips: RequestHandler = async (req, res, next) => {
   try {
-    const offset = Number(req.query._offset) || 0;
-    const limit = req.query._limit ? Number(req.query._limit) : null;
+    const filters = applyFilters(req);
 
-    const result = await TripServices.getAll(offset, limit);
+    const result = await TripServices.getAll(filters);
 
     return res.json(
       jsonResponse({

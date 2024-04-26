@@ -1,14 +1,16 @@
 import { NextFunction, Request, Response } from "express";
 import { DriverServices } from "../../../domain/services";
 import { driverLicenseIsvalid } from "../../../helpers/driverLicenseIsvalid";
+import { applyFilters } from "../../../helpers/applyFilters";
 
 export const checkLicenses = async (
-  _req: Request,
+  req: Request,
   _res: Response,
   next: NextFunction
 ) => {
   try {
-    const result = await DriverServices.getAll();
+    const filters = applyFilters(req);
+    const result = await DriverServices.getAll(filters);
 
     for (const driver of result.drivers) {
       const emision_date = driver?.dataValues.emision_date;

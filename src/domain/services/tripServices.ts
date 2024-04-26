@@ -4,8 +4,9 @@ import { FIRST_DAY_OF_MONTH, LAST_DAY_OF_MONTH } from "../constants";
 import { Trip } from "../models";
 import { DriverServices } from "./driverServices";
 import { VehicleServices } from "./vehicleServices";
+import { FilterAttibutes } from "../../helpers/applyFilters";
 
-const getAll = async (offset: number = 0, limit: number | null = null) => {
+const getAll = async ({ offset, limit }: FilterAttibutes) => {
   const trips = await Trip.findAll({
     attributes: ["id", "date", "hour", "minutes", "kms"],
     include: [
@@ -21,7 +22,7 @@ const getAll = async (offset: number = 0, limit: number | null = null) => {
       },
     ],
     offset,
-    limit: limit !== null ? limit : undefined,
+    limit,
   });
 
   const count = await Trip.count();
