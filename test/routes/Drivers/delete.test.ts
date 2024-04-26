@@ -18,7 +18,7 @@ describe("Pruebas en el endpoint /drivers - DELETE", () => {
     expect(res.body.result.success).toBeTruthy();
   });
 
-  test("Este endponit anula el chofer poniendo su propiedad isActive en false.", async () => {
+  test("Anula el chofer poniendo su propiedad isActive en false.", async () => {
     const newDriver = await api.post("/drivers").send(driver_available);
 
     const driver = await api.get("/drivers/" + newDriver.body.result.id);
