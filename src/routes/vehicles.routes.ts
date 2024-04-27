@@ -12,6 +12,7 @@ router.get("/kms-driven-monthly", controller.getVehiclesWithKmsDrivenMonthly);
 router.get("/in-services", controller.getVehiclesInServices);
 router.get("/", controller.getVehicles);
 router.get("/:id", controller.getVehicleByID);
+
 router.post("/", validateSchema(VehicleInsertSchema), controller.createVehicle);
 router.post("/:id/ready", controller.readyVehicle);
 router.put(

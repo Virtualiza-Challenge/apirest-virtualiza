@@ -1,3 +1,4 @@
+//TODO: este deberia ser parte de una tabla para poder actualizarlo dinamicamente
 export const WAHE_MONTH = 100;
 
 // Obtener la fecha actual
