@@ -52,7 +52,7 @@
 
 ## Estructura base del proyecto
 
-![Structure](./Docs/Estructura/struture.png)
+![Structure](./Docs/Estructura/struture.jpg)
 
 ## Iniciar el proyecto
 
