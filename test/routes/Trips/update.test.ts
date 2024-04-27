@@ -10,7 +10,7 @@ beforeAll(async () => {
   await resetDB();
 });
 
-describe("Pruebas en el endpoint /trips - POST", () => {
+describe("Pruebas en el endpoint /trips - PUT", () => {
   test("Al actualizar debe retornar success true.", async () => {
     const driver = await api.post("/drivers").send(driver_available);
     const vehicle = await api.post("/vehicles").send(vehicle_available);
