@@ -21,3 +21,5 @@
 Estructura base del proyecto
 
 ![Structure](https://github.com/Virtualiza-Challenge/apirest-virtualiza/blob/05-structure/Docs/Estructura/struture.png?raw=true)
+
+`docker-compose --env-file .env.dev up`
