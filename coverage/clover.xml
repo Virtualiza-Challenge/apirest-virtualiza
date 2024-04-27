@@ -1,448 +1,565 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1714097549887" clover="3.2.0">
-  <project timestamp="1714097549887" name="All files">
-    <metrics statements="324" coveredstatements="239" conditionals="55" coveredconditionals="20" methods="86" coveredmethods="39" elements="465" coveredelements="298" complexity="0" loc="324" ncloc="324" packages="14" files="29" classes="29"/>
+<coverage generated="1714178371454" clover="3.2.0">
+  <project timestamp="1714178371454" name="All files">
+    <metrics statements="426" coveredstatements="347" conditionals="55" coveredconditionals="23" methods="119" coveredmethods="89" elements="600" coveredelements="459" complexity="0" loc="426" ncloc="426" packages="15" files="33" classes="33"/>
     <package name="src">
-      <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="18" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="app.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/app.ts">
-        <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
-        <line num="6" count="4" type="stmt"/>
-        <line num="8" count="4" type="stmt"/>
-        <line num="10" count="4" type="stmt"/>
-        <line num="11" count="4" type="stmt"/>
-        <line num="12" count="4" type="stmt"/>
-        <line num="14" count="4" type="stmt"/>
-        <line num="15" count="4" type="stmt"/>
-        <line num="16" count="4" type="stmt"/>
+        <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
+        <line num="5" count="12" type="stmt"/>
+        <line num="6" count="12" type="stmt"/>
+        <line num="7" count="12" type="stmt"/>
+        <line num="9" count="12" type="stmt"/>
+        <line num="11" count="12" type="stmt"/>
+        <line num="12" count="12" type="stmt"/>
+        <line num="13" count="12" type="stmt"/>
+        <line num="15" count="12" type="stmt"/>
+        <line num="16" count="12" type="stmt"/>
+        <line num="17" count="12" type="stmt"/>
+        <line num="19" count="12" type="stmt"/>
       </file>
       <file name="config.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/config.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="5" count="12" type="stmt"/>
       </file>
     </package>
     <package name="src.controllers">
-      <metrics statements="65" coveredstatements="33" conditionals="4" coveredconditionals="0" methods="30" coveredmethods="10"/>
+      <metrics statements="129" coveredstatements="82" conditionals="0" coveredconditionals="0" methods="44" coveredmethods="32"/>
       <file name="drivers.contollers.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/controllers/drivers.contollers.ts">
-        <metrics statements="21" coveredstatements="21" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="10"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="9" count="5" type="stmt"/>
-        <line num="10" count="5" type="stmt"/>
-        <line num="12" count="5" type="stmt"/>
-        <line num="14" count="5" type="stmt"/>
-        <line num="17" count="5" type="stmt"/>
-        <line num="18" count="5" type="stmt"/>
-        <line num="20" count="5" type="stmt"/>
-        <line num="22" count="5" type="stmt"/>
-        <line num="25" count="4" type="stmt"/>
-        <line num="26" count="2" type="stmt"/>
-        <line num="27" count="2" type="stmt"/>
-        <line num="29" count="2" type="stmt"/>
-        <line num="31" count="2" type="stmt"/>
-        <line num="34" count="4" type="stmt"/>
-        <line num="35" count="2" type="stmt"/>
-        <line num="37" count="2" type="stmt"/>
-        <line num="39" count="2" type="stmt"/>
-      </file>
-      <file name="trips.contollers.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/controllers/trips.contollers.ts">
-        <metrics statements="23" coveredstatements="6" conditionals="4" coveredconditionals="0" methods="10" coveredmethods="0"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="5" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="6" count="0" type="cond" truecount="0" falsecount="2"/>
+        <metrics statements="42" coveredstatements="26" conditionals="0" coveredconditionals="0" methods="14" coveredmethods="10"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
+        <line num="6" count="12" type="stmt"/>
         <line num="7" count="0" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
-        <line num="11" count="4" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="18" count="4" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="25" count="4" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="21" count="12" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="33" count="4" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
         <line num="36" count="0" type="stmt"/>
-        <line num="37" count="0" type="stmt"/>
+        <line num="40" count="12" type="stmt"/>
+        <line num="41" count="5" type="stmt"/>
+        <line num="42" count="5" type="stmt"/>
+        <line num="43" count="5" type="stmt"/>
+        <line num="44" count="5" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="55" count="12" type="stmt"/>
+        <line num="56" count="5" type="stmt"/>
+        <line num="57" count="5" type="stmt"/>
+        <line num="59" count="5" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="65" count="12" type="stmt"/>
+        <line num="66" count="10" type="stmt"/>
+        <line num="67" count="10" type="stmt"/>
+        <line num="69" count="10" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="75" count="12" type="stmt"/>
+        <line num="76" count="2" type="stmt"/>
+        <line num="77" count="2" type="stmt"/>
+        <line num="79" count="2" type="stmt"/>
+        <line num="81" count="0" type="stmt"/>
+        <line num="85" count="12" type="stmt"/>
+        <line num="86" count="2" type="stmt"/>
+        <line num="87" count="2" type="stmt"/>
+        <line num="89" count="2" type="stmt"/>
+        <line num="91" count="0" type="stmt"/>
       </file>
-      <file name="vehicles.contollers.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/controllers/vehicles.contollers.ts">
-        <metrics statements="21" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="0"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="9" count="4" type="stmt"/>
+      <file name="trips.contollers.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/controllers/trips.contollers.ts">
+        <metrics statements="40" coveredstatements="26" conditionals="0" coveredconditionals="0" methods="14" coveredmethods="10"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
+        <line num="6" count="12" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="16" count="4" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="23" count="4" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
+        <line num="23" count="12" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="40" count="12" type="stmt"/>
+        <line num="41" count="4" type="stmt"/>
+        <line num="42" count="4" type="stmt"/>
+        <line num="43" count="4" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="49" count="12" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="58" count="12" type="stmt"/>
+        <line num="59" count="5" type="stmt"/>
+        <line num="60" count="5" type="stmt"/>
+        <line num="61" count="5" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="67" count="12" type="stmt"/>
+        <line num="68" count="2" type="stmt"/>
+        <line num="69" count="2" type="stmt"/>
+        <line num="70" count="2" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="76" count="12" type="stmt"/>
+        <line num="77" count="3" type="stmt"/>
+        <line num="78" count="3" type="stmt"/>
+        <line num="79" count="3" type="stmt"/>
+        <line num="81" count="0" type="stmt"/>
+      </file>
+      <file name="vehicles.contollers.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/controllers/vehicles.contollers.ts">
+        <metrics statements="47" coveredstatements="30" conditionals="0" coveredconditionals="0" methods="16" coveredmethods="12"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
+        <line num="6" count="12" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="25" count="12" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
         <line num="28" count="0" type="stmt"/>
-        <line num="31" count="4" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
-        <line num="35" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="40" count="12" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="43" count="2" type="stmt"/>
+        <line num="44" count="2" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="55" count="12" type="stmt"/>
+        <line num="56" count="9" type="stmt"/>
+        <line num="57" count="9" type="stmt"/>
+        <line num="58" count="9" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+        <line num="64" count="12" type="stmt"/>
+        <line num="65" count="12" type="stmt"/>
+        <line num="66" count="12" type="stmt"/>
+        <line num="67" count="12" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="73" count="12" type="stmt"/>
+        <line num="74" count="2" type="stmt"/>
+        <line num="75" count="2" type="stmt"/>
+        <line num="76" count="2" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="82" count="12" type="stmt"/>
+        <line num="83" count="2" type="stmt"/>
+        <line num="84" count="2" type="stmt"/>
+        <line num="85" count="2" type="stmt"/>
+        <line num="87" count="0" type="stmt"/>
+        <line num="91" count="12" type="stmt"/>
+        <line num="92" count="2" type="stmt"/>
+        <line num="93" count="2" type="stmt"/>
+        <line num="94" count="2" type="stmt"/>
+        <line num="96" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.domain.constants">
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="index.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/domain/constants/index.ts">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="7" count="4" type="stmt"/>
-        <line num="14" count="4" type="stmt"/>
-        <line num="20" count="4" type="stmt"/>
-        <line num="21" count="4" type="stmt"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
+        <line num="7" count="12" type="stmt"/>
+        <line num="14" count="12" type="stmt"/>
+        <line num="20" count="12" type="stmt"/>
+        <line num="21" count="12" type="stmt"/>
       </file>
     </package>
     <package name="src.domain.models">
       <metrics statements="19" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="Driver.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/domain/models/Driver.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="6" count="4" type="stmt"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="6" count="12" type="stmt"/>
       </file>
       <file name="Trip.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/domain/models/Trip.ts">
         <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
-        <line num="7" count="4" type="stmt"/>
-        <line num="38" count="4" type="stmt"/>
-        <line num="39" count="4" type="stmt"/>
-        <line num="41" count="4" type="stmt"/>
-        <line num="42" count="4" type="stmt"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
+        <line num="5" count="12" type="stmt"/>
+        <line num="7" count="12" type="stmt"/>
+        <line num="38" count="12" type="stmt"/>
+        <line num="39" count="12" type="stmt"/>
+        <line num="41" count="12" type="stmt"/>
+        <line num="42" count="12" type="stmt"/>
       </file>
       <file name="Vehicle.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/domain/models/Vehicle.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="5" count="12" type="stmt"/>
       </file>
       <file name="index.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/domain/models/index.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="3" count="12" type="stmt"/>
       </file>
     </package>
     <package name="src.domain.services">
-      <metrics statements="101" coveredstatements="58" conditionals="24" coveredconditionals="1" methods="43" coveredmethods="17"/>
+      <metrics statements="113" coveredstatements="94" conditionals="20" coveredconditionals="3" methods="59" coveredmethods="43"/>
       <file name="driverServices.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/domain/services/driverServices.ts">
-        <metrics statements="37" coveredstatements="31" conditionals="11" coveredconditionals="1" methods="14" coveredmethods="14"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
-        <line num="7" count="4" type="stmt"/>
-        <line num="8" count="4" type="stmt"/>
-        <line num="9" count="4" type="stmt"/>
-        <line num="10" count="7" type="stmt"/>
-        <line num="12" count="7" type="cond" truecount="0" falsecount="1"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="15" count="0" type="cond" truecount="0" falsecount="4"/>
-        <line num="19" count="4" type="stmt"/>
-        <line num="22" count="4" type="stmt"/>
-        <line num="25" count="15" type="stmt"/>
-        <line num="26" count="15" type="stmt"/>
-        <line num="28" count="15" type="cond" truecount="1" falsecount="0"/>
-        <line num="30" count="14" type="stmt"/>
-        <line num="32" count="14" type="cond" truecount="0" falsecount="1"/>
+        <metrics statements="41" coveredstatements="31" conditionals="11" coveredconditionals="1" methods="18" coveredmethods="14"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
+        <line num="5" count="12" type="stmt"/>
+        <line num="6" count="12" type="stmt"/>
+        <line num="9" count="12" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="14" count="12" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="22" count="12" type="stmt"/>
+        <line num="23" count="10" type="stmt"/>
+        <line num="26" count="10" type="stmt"/>
+        <line num="27" count="10" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="32" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="33" count="0" type="stmt"/>
         <line num="34" count="0" type="stmt"/>
         <line num="35" count="0" type="cond" truecount="0" falsecount="4"/>
-        <line num="38" count="14" type="stmt"/>
-        <line num="41" count="5" type="stmt"/>
-        <line num="42" count="5" type="stmt"/>
-        <line num="44" count="5" type="stmt"/>
-        <line num="51" count="5" type="stmt"/>
-        <line num="54" count="4" type="stmt"/>
-        <line num="55" count="2" type="stmt"/>
-        <line num="56" count="2" type="stmt"/>
-        <line num="59" count="4" type="stmt"/>
-        <line num="60" count="2" type="stmt"/>
-        <line num="61" count="2" type="stmt"/>
-        <line num="64" count="12" type="stmt"/>
-        <line num="65" count="12" type="stmt"/>
-        <line num="69" count="12" type="stmt"/>
-        <line num="72" count="4" type="stmt"/>
+        <line num="38" count="10" type="stmt"/>
+        <line num="42" count="20" type="stmt"/>
+        <line num="43" count="20" type="stmt"/>
+        <line num="45" count="20" type="cond" truecount="1" falsecount="0"/>
+        <line num="47" count="19" type="stmt"/>
+        <line num="49" count="19" type="cond" truecount="0" falsecount="1"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="52" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="55" count="19" type="stmt"/>
+        <line num="58" count="12" type="stmt"/>
+        <line num="59" count="10" type="stmt"/>
+        <line num="61" count="10" type="stmt"/>
+        <line num="68" count="10" type="stmt"/>
+        <line num="71" count="12" type="stmt"/>
+        <line num="72" count="2" type="stmt"/>
+        <line num="73" count="2" type="stmt"/>
+        <line num="76" count="12" type="stmt"/>
+        <line num="77" count="2" type="stmt"/>
+        <line num="78" count="2" type="stmt"/>
+        <line num="82" count="12" type="stmt"/>
+        <line num="83" count="9" type="stmt"/>
+        <line num="87" count="9" type="stmt"/>
+        <line num="90" count="12" type="stmt"/>
       </file>
       <file name="index.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/domain/services/index.ts">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="3" count="44" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="1" count="28" type="stmt"/>
+        <line num="3" count="60" type="stmt"/>
+        <line num="4" count="41" type="stmt"/>
       </file>
       <file name="tripServices.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/domain/services/tripServices.ts">
-        <metrics statements="34" coveredstatements="14" conditionals="12" coveredconditionals="0" methods="12" coveredmethods="2"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
-        <line num="6" count="4" type="stmt"/>
-        <line num="8" count="4" type="cond" truecount="0" falsecount="2"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="32" count="4" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
-        <line num="37" count="4" type="stmt"/>
-        <line num="38" count="0" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="43" count="0" type="cond" truecount="0" falsecount="3"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="52" count="0" type="stmt"/>
-        <line num="54" count="0" type="stmt"/>
-        <line num="57" count="4" type="stmt"/>
-        <line num="58" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="59" count="0" type="stmt"/>
-        <line num="61" count="0" type="cond" truecount="0" falsecount="4"/>
-        <line num="63" count="0" type="stmt"/>
-        <line num="66" count="0" type="stmt"/>
-        <line num="67" count="0" type="stmt"/>
-        <line num="70" count="4" type="stmt"/>
-        <line num="71" count="0" type="stmt"/>
-        <line num="72" count="0" type="stmt"/>
-        <line num="75" count="21" type="stmt"/>
-        <line num="76" count="21" type="stmt"/>
-        <line num="85" count="21" type="stmt"/>
-        <line num="88" count="4" type="stmt"/>
+        <metrics statements="39" coveredstatements="32" conditionals="8" coveredconditionals="2" methods="20" coveredmethods="12"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="8" count="12" type="stmt"/>
+        <line num="9" count="12" type="stmt"/>
+        <line num="10" count="12" type="stmt"/>
+        <line num="12" count="12" type="stmt"/>
+        <line num="14" count="12" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="35" count="12" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="53" count="12" type="stmt"/>
+        <line num="54" count="4" type="stmt"/>
+        <line num="59" count="12" type="stmt"/>
+        <line num="60" count="5" type="stmt"/>
+        <line num="62" count="5" type="stmt"/>
+        <line num="63" count="5" type="stmt"/>
+        <line num="65" count="5" type="cond" truecount="2" falsecount="1"/>
+        <line num="67" count="5" type="stmt"/>
+        <line num="74" count="5" type="stmt"/>
+        <line num="76" count="5" type="stmt"/>
+        <line num="79" count="12" type="stmt"/>
+        <line num="80" count="2" type="cond" truecount="0" falsecount="1"/>
+        <line num="81" count="0" type="stmt"/>
+        <line num="83" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="85" count="0" type="stmt"/>
+        <line num="88" count="2" type="stmt"/>
+        <line num="89" count="2" type="stmt"/>
+        <line num="92" count="12" type="stmt"/>
+        <line num="93" count="3" type="stmt"/>
+        <line num="94" count="3" type="stmt"/>
+        <line num="97" count="19" type="stmt"/>
+        <line num="98" count="19" type="stmt"/>
+        <line num="113" count="12" type="stmt"/>
+        <line num="114" count="0" type="stmt"/>
+        <line num="149" count="12" type="stmt"/>
+        <line num="150" count="0" type="stmt"/>
+        <line num="175" count="12" type="stmt"/>
+        <line num="176" count="0" type="stmt"/>
+        <line num="205" count="12" type="stmt"/>
       </file>
       <file name="vehicleServices.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/domain/services/vehicleServices.ts">
-        <metrics statements="27" coveredstatements="10" conditionals="1" coveredconditionals="0" methods="14" coveredmethods="0"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="10" count="4" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="15" count="4" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="20" count="4" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="25" count="4" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="30" count="4" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="33" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="35" count="0" type="stmt"/>
-        <line num="37" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="45" count="4" type="stmt"/>
-        <line num="46" count="0" type="stmt"/>
-        <line num="50" count="0" type="stmt"/>
-        <line num="53" count="4" type="stmt"/>
+        <metrics statements="30" coveredstatements="28" conditionals="1" coveredconditionals="0" methods="18" coveredmethods="14"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
+        <line num="5" count="12" type="stmt"/>
+        <line num="8" count="12" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="13" count="12" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="21" count="12" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="25" count="19" type="stmt"/>
+        <line num="26" count="19" type="stmt"/>
+        <line num="29" count="12" type="stmt"/>
+        <line num="30" count="12" type="stmt"/>
+        <line num="31" count="12" type="stmt"/>
+        <line num="34" count="12" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="39" count="12" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="45" count="12" type="stmt"/>
+        <line num="46" count="5" type="stmt"/>
+        <line num="48" count="5" type="cond" truecount="0" falsecount="1"/>
+        <line num="50" count="5" type="stmt"/>
+        <line num="52" count="5" type="stmt"/>
+        <line num="57" count="5" type="stmt"/>
+        <line num="61" count="12" type="stmt"/>
+        <line num="62" count="2" type="stmt"/>
+        <line num="66" count="2" type="stmt"/>
+        <line num="69" count="12" type="stmt"/>
       </file>
     </package>
     <package name="src.helpers">
-      <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <metrics statements="13" coveredstatements="13" conditionals="12" coveredconditionals="9" methods="3" coveredmethods="3"/>
+      <file name="applyFilters.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/helpers/applyFilters.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="8" count="12" type="stmt"/>
+        <line num="9" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="14" type="cond" truecount="1" falsecount="1"/>
+        <line num="11" count="14" type="stmt"/>
+      </file>
       <file name="driverLicenseIsvalid.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/helpers/driverLicenseIsvalid.ts">
         <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="7" count="17" type="cond" truecount="1" falsecount="1"/>
-        <line num="9" count="17" type="cond" truecount="1" falsecount="1"/>
-        <line num="11" count="17" type="stmt"/>
-        <line num="14" count="17" type="stmt"/>
-        <line num="17" count="17" type="stmt"/>
-        <line num="19" count="17" type="stmt"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="7" count="19" type="cond" truecount="1" falsecount="1"/>
+        <line num="9" count="19" type="cond" truecount="1" falsecount="1"/>
+        <line num="11" count="19" type="stmt"/>
+        <line num="14" count="19" type="stmt"/>
+        <line num="17" count="19" type="stmt"/>
+        <line num="19" count="19" type="stmt"/>
+      </file>
+      <file name="jsonResponse.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/helpers/jsonResponse.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <line num="8" count="12" type="stmt"/>
+        <line num="14" count="74" type="stmt"/>
       </file>
     </package>
     <package name="src.infraestructure.adapters">
       <metrics statements="12" coveredstatements="11" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
       <file name="database.adapter.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/infraestructure/adapters/database.adapter.ts">
         <metrics statements="12" coveredstatements="11" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="6" count="4" type="stmt"/>
-        <line num="7" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="8" count="4" type="stmt"/>
-        <line num="21" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="22" count="4" type="stmt"/>
-        <line num="23" count="4" type="stmt"/>
-        <line num="24" count="4" type="stmt"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
+        <line num="6" count="12" type="stmt"/>
+        <line num="7" count="12" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="12" type="stmt"/>
+        <line num="21" count="12" type="cond" truecount="1" falsecount="0"/>
+        <line num="22" count="12" type="stmt"/>
+        <line num="23" count="12" type="stmt"/>
+        <line num="24" count="12" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
-        <line num="30" count="4" type="stmt"/>
+        <line num="30" count="12" type="stmt"/>
       </file>
     </package>
     <package name="src.infraestructure.database">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="index.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/infraestructure/database/index.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="7" count="4" type="stmt"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
+        <line num="7" count="12" type="stmt"/>
       </file>
     </package>
     <package name="src.infraestructure.middlewares">
-      <metrics statements="12" coveredstatements="7" conditionals="1" coveredconditionals="0" methods="3" coveredmethods="2"/>
+      <metrics statements="16" coveredstatements="12" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="2"/>
+      <file name="handlerError.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/infraestructure/middlewares/handlerError.ts">
+        <metrics statements="5" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+      </file>
       <file name="validateSchema.middleware.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/infraestructure/middlewares/validateSchema.middleware.ts">
-        <metrics statements="12" coveredstatements="7" conditionals="1" coveredconditionals="0" methods="3" coveredmethods="2"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
-        <line num="6" count="24" type="stmt"/>
-        <line num="7" count="7" type="stmt"/>
-        <line num="8" count="7" type="stmt"/>
-        <line num="9" count="7" type="stmt"/>
-        <line num="11" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
+        <metrics statements="11" coveredstatements="10" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="5" count="12" type="stmt"/>
+        <line num="6" count="12" type="stmt"/>
+        <line num="7" count="72" type="stmt"/>
+        <line num="8" count="37" type="stmt"/>
+        <line num="9" count="37" type="stmt"/>
+        <line num="10" count="33" type="stmt"/>
+        <line num="12" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="4" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.infraestructure.middlewares.Drivers">
-      <metrics statements="27" coveredstatements="24" conditionals="20" coveredconditionals="15" methods="4" coveredmethods="4"/>
+      <metrics statements="30" coveredstatements="23" conditionals="20" coveredconditionals="8" methods="4" coveredmethods="4"/>
       <file name="checkLicense.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/infraestructure/middlewares/Drivers/checkLicense.ts">
-        <metrics statements="13" coveredstatements="12" conditionals="11" coveredconditionals="8" methods="2" coveredmethods="2"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
-        <line num="9" count="10" type="stmt"/>
+        <metrics statements="14" coveredstatements="13" conditionals="11" coveredconditionals="8" methods="2" coveredmethods="2"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
+        <line num="6" count="12" type="stmt"/>
         <line num="10" count="10" type="stmt"/>
         <line num="11" count="10" type="stmt"/>
-        <line num="13" count="10" type="cond" truecount="1" falsecount="0"/>
-        <line num="15" count="9" type="cond" truecount="3" falsecount="1"/>
+        <line num="12" count="10" type="stmt"/>
+        <line num="14" count="10" type="cond" truecount="1" falsecount="0"/>
         <line num="16" count="9" type="cond" truecount="3" falsecount="1"/>
-        <line num="18" count="9" type="cond" truecount="1" falsecount="1"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="21" count="9" type="stmt"/>
+        <line num="17" count="9" type="cond" truecount="3" falsecount="1"/>
+        <line num="19" count="9" type="cond" truecount="1" falsecount="1"/>
+        <line num="20" count="0" type="stmt"/>
         <line num="22" count="9" type="stmt"/>
+        <line num="23" count="9" type="stmt"/>
       </file>
       <file name="checkLicenses.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/infraestructure/middlewares/Drivers/checkLicenses.ts">
-        <metrics statements="14" coveredstatements="12" conditionals="9" coveredconditionals="7" methods="2" coveredmethods="2"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
-        <line num="9" count="2" type="stmt"/>
-        <line num="10" count="2" type="stmt"/>
-        <line num="11" count="2" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
-        <line num="14" count="3" type="cond" truecount="3" falsecount="1"/>
-        <line num="15" count="3" type="cond" truecount="3" falsecount="1"/>
-        <line num="17" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="18" count="3" type="stmt"/>
-        <line num="22" count="2" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
+        <metrics statements="16" coveredstatements="10" conditionals="9" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
+        <line num="6" count="12" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="11" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="16" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="17" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="19" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="24" count="5" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.infraestructure.schemas">
       <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="driver.schema.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/infraestructure/schemas/driver.schema.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
-        <line num="13" count="4" type="stmt"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="5" count="12" type="stmt"/>
+        <line num="13" count="12" type="stmt"/>
       </file>
       <file name="trip.schema.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/infraestructure/schemas/trip.schema.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="12" count="4" type="stmt"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="12" count="12" type="stmt"/>
       </file>
       <file name="vehicle.schema.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/infraestructure/schemas/vehicle.schema.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="10" count="4" type="stmt"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="10" count="12" type="stmt"/>
       </file>
     </package>
     <package name="src.routes">
-      <metrics statements="36" coveredstatements="36" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="43" coveredstatements="43" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="drivers.routes.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/routes/drivers.routes.ts">
-        <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
-        <line num="6" count="4" type="stmt"/>
-        <line num="11" count="4" type="stmt"/>
-        <line num="13" count="4" type="stmt"/>
-        <line num="14" count="4" type="stmt"/>
-        <line num="15" count="4" type="stmt"/>
-        <line num="16" count="4" type="stmt"/>
-        <line num="22" count="4" type="stmt"/>
-        <line num="24" count="4" type="stmt"/>
+        <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
+        <line num="5" count="12" type="stmt"/>
+        <line num="6" count="12" type="stmt"/>
+        <line num="11" count="12" type="stmt"/>
+        <line num="13" count="12" type="stmt"/>
+        <line num="14" count="12" type="stmt"/>
+        <line num="19" count="12" type="stmt"/>
+        <line num="20" count="12" type="stmt"/>
+        <line num="21" count="12" type="stmt"/>
+        <line num="22" count="12" type="stmt"/>
+        <line num="28" count="12" type="stmt"/>
+        <line num="30" count="12" type="stmt"/>
       </file>
       <file name="paths.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/routes/paths.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="4" type="stmt"/>
+        <line num="1" count="12" type="stmt"/>
       </file>
       <file name="trips.routes.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/routes/trips.routes.ts">
-        <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="9" count="4" type="stmt"/>
-        <line num="11" count="4" type="stmt"/>
-        <line num="12" count="4" type="stmt"/>
-        <line num="13" count="4" type="stmt"/>
-        <line num="14" count="4" type="stmt"/>
-        <line num="15" count="4" type="stmt"/>
-        <line num="17" count="4" type="stmt"/>
+        <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
+        <line num="9" count="12" type="stmt"/>
+        <line num="11" count="12" type="stmt"/>
+        <line num="12" count="12" type="stmt"/>
+        <line num="13" count="12" type="stmt"/>
+        <line num="14" count="12" type="stmt"/>
+        <line num="15" count="12" type="stmt"/>
+        <line num="16" count="12" type="stmt"/>
+        <line num="17" count="12" type="stmt"/>
+        <line num="19" count="12" type="stmt"/>
       </file>
       <file name="vehicles.routes.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/src/routes/vehicles.routes.ts">
-        <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="9" count="4" type="stmt"/>
-        <line num="11" count="4" type="stmt"/>
-        <line num="12" count="4" type="stmt"/>
-        <line num="13" count="4" type="stmt"/>
-        <line num="14" count="4" type="stmt"/>
-        <line num="19" count="4" type="stmt"/>
-        <line num="21" count="4" type="stmt"/>
+        <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
+        <line num="9" count="12" type="stmt"/>
+        <line num="11" count="12" type="stmt"/>
+        <line num="12" count="12" type="stmt"/>
+        <line num="13" count="12" type="stmt"/>
+        <line num="14" count="12" type="stmt"/>
+        <line num="15" count="12" type="stmt"/>
+        <line num="16" count="12" type="stmt"/>
+        <line num="17" count="12" type="stmt"/>
+        <line num="22" count="12" type="stmt"/>
+        <line num="24" count="12" type="stmt"/>
+      </file>
+    </package>
+    <package name="test.constants">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/test/constants/index.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="9" count="9" type="stmt"/>
+        <line num="16" count="9" type="stmt"/>
+        <line num="25" count="9" type="stmt"/>
       </file>
     </package>
     <package name="test.helpers">
       <metrics statements="7" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="index.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/test/helpers/index.ts">
         <metrics statements="7" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="3" count="6" type="stmt"/>
-        <line num="4" count="6" type="stmt"/>
-        <line num="5" count="6" type="stmt"/>
-        <line num="8" count="6" type="stmt"/>
-        <line num="11" count="6" type="stmt"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="3" count="18" type="stmt"/>
+        <line num="4" count="18" type="stmt"/>
+        <line num="5" count="18" type="stmt"/>
+        <line num="8" count="18" type="stmt"/>
+        <line num="11" count="18" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
       </file>
     </package>
@@ -450,9 +567,9 @@
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="index.ts" path="/Users/nikodev/Development/Virtualisa-challenge/Api-Rest-Virtualiza/test/setup/index.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
+        <line num="1" count="12" type="stmt"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
       </file>
     </package>
   </project>
