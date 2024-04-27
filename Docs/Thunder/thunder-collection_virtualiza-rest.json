@@ -1,0 +1,351 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "virtualiza-rest",
+    "collectionId": "ba3cb0cd-cc83-4a05-8513-bcfa2c0c30d3",
+    "dateExported": "2024-04-26T21:44:44.678Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "d616208b-b110-4991-9b77-f7775636b466",
+            "name": "drivers",
+            "containerId": "",
+            "created": "2024-04-21T22:33:07.239Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "cd61cec2-16ad-48d8-8a6a-73811216ff7d",
+            "name": "vehicles",
+            "containerId": "",
+            "created": "2024-04-21T22:44:05.860Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "fd00d0c6-96fd-492e-b18c-a860da81ec6c",
+            "name": "trips",
+            "containerId": "",
+            "created": "2024-04-21T22:51:39.020Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "ec9f63cb-169a-4019-ba07-f18fa5503d41",
+            "colId": "ba3cb0cd-cc83-4a05-8513-bcfa2c0c30d3",
+            "containerId": "d616208b-b110-4991-9b77-f7775636b466",
+            "name": "list",
+            "url": "localhost:3000/drivers?_offset=1&_limit=2",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-04-21T22:33:16.457Z",
+            "modified": "2024-04-26T16:45:03.810Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "_offset",
+                    "value": "1",
+                    "isPath": false
+                },
+                {
+                    "name": "_limit",
+                    "value": "2",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "1699e3aa-e730-45a8-a3f9-d04453d9b0db",
+            "colId": "ba3cb0cd-cc83-4a05-8513-bcfa2c0c30d3",
+            "containerId": "cd61cec2-16ad-48d8-8a6a-73811216ff7d",
+            "name": "list",
+            "url": "localhost:3000/vehicles",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-04-21T22:44:05.860Z",
+            "modified": "2024-04-26T21:43:32.690Z",
+            "headers": []
+        },
+        {
+            "_id": "0161220d-37a5-47d0-a120-0ffed79342cd",
+            "colId": "ba3cb0cd-cc83-4a05-8513-bcfa2c0c30d3",
+            "containerId": "fd00d0c6-96fd-492e-b18c-a860da81ec6c",
+            "name": "list",
+            "url": "localhost:3000/trips?_offset=1&_limit=2",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-04-21T22:51:39.020Z",
+            "modified": "2024-04-26T16:44:38.055Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "_offset",
+                    "value": "1",
+                    "isPath": false
+                },
+                {
+                    "name": "_limit",
+                    "value": "2",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "2ec36f90-3cd9-4053-af6b-83f8619e2b22",
+            "colId": "ba3cb0cd-cc83-4a05-8513-bcfa2c0c30d3",
+            "containerId": "cd61cec2-16ad-48d8-8a6a-73811216ff7d",
+            "name": "list - kms-driven-monthly",
+            "url": "localhost:3000/vehicles/kms-driven-monthly",
+            "method": "GET",
+            "sortNum": 22500,
+            "created": "2024-04-26T21:00:52.655Z",
+            "modified": "2024-04-26T21:02:03.645Z",
+            "headers": []
+        },
+        {
+            "_id": "9a08a497-be5f-43c2-b9a1-db1d27caf284",
+            "colId": "ba3cb0cd-cc83-4a05-8513-bcfa2c0c30d3",
+            "containerId": "cd61cec2-16ad-48d8-8a6a-73811216ff7d",
+            "name": "list - inServices",
+            "url": "localhost:3000/vehicles/in-services",
+            "method": "GET",
+            "sortNum": 25000,
+            "created": "2024-04-26T18:43:07.592Z",
+            "modified": "2024-04-26T18:44:02.908Z",
+            "headers": []
+        },
+        {
+            "_id": "f1ba4bd1-6a43-40f1-a1f2-c400b2743cfd",
+            "colId": "ba3cb0cd-cc83-4a05-8513-bcfa2c0c30d3",
+            "containerId": "d616208b-b110-4991-9b77-f7775636b466",
+            "name": "list - unable-to-drive",
+            "url": "localhost:3000/drivers/",
+            "method": "GET",
+            "sortNum": 25000,
+            "created": "2024-04-26T18:55:06.907Z",
+            "modified": "2024-04-26T18:55:59.961Z",
+            "headers": []
+        },
+        {
+            "_id": "c54ec4e3-e8f3-4bb1-b1b2-c00847a31452",
+            "colId": "ba3cb0cd-cc83-4a05-8513-bcfa2c0c30d3",
+            "containerId": "d616208b-b110-4991-9b77-f7775636b466",
+            "name": "find",
+            "url": "localhost:3000/drivers/1",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-04-21T22:33:41.315Z",
+            "modified": "2024-04-26T20:15:40.650Z",
+            "headers": []
+        },
+        {
+            "_id": "b8e25455-8560-4286-a887-3c91b125a98d",
+            "colId": "ba3cb0cd-cc83-4a05-8513-bcfa2c0c30d3",
+            "containerId": "cd61cec2-16ad-48d8-8a6a-73811216ff7d",
+            "name": "find",
+            "url": "localhost:3000/vehicles/2",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-04-21T22:44:05.861Z",
+            "modified": "2024-04-22T20:09:00.481Z",
+            "headers": []
+        },
+        {
+            "_id": "5292fc17-8f0f-48e4-8414-27641f957bd4",
+            "colId": "ba3cb0cd-cc83-4a05-8513-bcfa2c0c30d3",
+            "containerId": "fd00d0c6-96fd-492e-b18c-a860da81ec6c",
+            "name": "find",
+            "url": "localhost:3000/trips/1",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-04-21T22:51:39.021Z",
+            "modified": "2024-04-21T22:51:58.948Z",
+            "headers": []
+        },
+        {
+            "_id": "cd8e7553-9696-43a6-9470-c27a409f3d3c",
+            "colId": "ba3cb0cd-cc83-4a05-8513-bcfa2c0c30d3",
+            "containerId": "d616208b-b110-4991-9b77-f7775636b466",
+            "name": "list - top-ranking",
+            "url": "localhost:3000/drivers/top-ranking",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-04-26T19:26:45.222Z",
+            "modified": "2024-04-26T19:27:19.437Z",
+            "headers": []
+        },
+        {
+            "_id": "0aaefc7c-106e-4f4b-b81a-5f46340ea306",
+            "colId": "ba3cb0cd-cc83-4a05-8513-bcfa2c0c30d3",
+            "containerId": "fd00d0c6-96fd-492e-b18c-a860da81ec6c",
+            "name": "list - monthly-summary",
+            "url": "localhost:3000/trips/monthly-summary",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-04-26T21:18:02.056Z",
+            "modified": "2024-04-26T21:18:33.679Z",
+            "headers": []
+        },
+        {
+            "_id": "e91959fe-970a-481c-ae43-e6249825b312",
+            "colId": "ba3cb0cd-cc83-4a05-8513-bcfa2c0c30d3",
+            "containerId": "d616208b-b110-4991-9b77-f7775636b466",
+            "name": "new",
+            "url": "localhost:3000/drivers",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-04-21T22:34:11.964Z",
+            "modified": "2024-04-26T20:40:54.328Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"name\": \"niko\",\n    \"surname\": \"Brain\",\n    \"dni\": \"34422345\",\n    \"license_type\":  \"Professional\",\n    \"emision_date\": \"2022-06-06\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "ade345ed-38b8-423f-9be4-10be371dac09",
+            "colId": "ba3cb0cd-cc83-4a05-8513-bcfa2c0c30d3",
+            "containerId": "cd61cec2-16ad-48d8-8a6a-73811216ff7d",
+            "name": "new",
+            "url": "localhost:3000/vehicles",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-04-21T22:44:05.862Z",
+            "modified": "2024-04-24T23:48:45.818Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"plate\": \"UQI 841\",\n  \"brand\": \"Volkswagen\",\n  \"model\": \"Vento\",\n  \"year\": 2015\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "75d48569-3773-4a16-b8c8-e1bb45427d6d",
+            "colId": "ba3cb0cd-cc83-4a05-8513-bcfa2c0c30d3",
+            "containerId": "fd00d0c6-96fd-492e-b18c-a860da81ec6c",
+            "name": "new",
+            "url": "localhost:3000/trips",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-04-21T22:51:39.022Z",
+            "modified": "2024-04-24T23:50:37.482Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"date\":  \"2024-04-19\",\n    \"hour\": 18,\n    \"minutes\": 49,\n    \"kms\": 3000,\n    \"driver_id\": 2,\n    \"vehicle_id\": 4\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "454d0da7-0e99-4450-9d10-d59e3e4ab65d",
+            "colId": "ba3cb0cd-cc83-4a05-8513-bcfa2c0c30d3",
+            "containerId": "fd00d0c6-96fd-492e-b18c-a860da81ec6c",
+            "name": "find nested",
+            "url": "localhost:3000/trips/1/driver/vehicle",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-04-26T16:54:16.645Z",
+            "modified": "2024-04-26T16:54:40.947Z",
+            "headers": []
+        },
+        {
+            "_id": "cca4f315-e296-4fe6-b737-4554a81dddc1",
+            "colId": "ba3cb0cd-cc83-4a05-8513-bcfa2c0c30d3",
+            "containerId": "cd61cec2-16ad-48d8-8a6a-73811216ff7d",
+            "name": "find - ready",
+            "url": "localhost:3000/vehicles/2",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-04-26T21:42:39.216Z",
+            "modified": "2024-04-26T21:43:58.716Z",
+            "headers": []
+        },
+        {
+            "_id": "e760da79-9ba0-4b8d-9ced-b16a9ba18223",
+            "colId": "ba3cb0cd-cc83-4a05-8513-bcfa2c0c30d3",
+            "containerId": "d616208b-b110-4991-9b77-f7775636b466",
+            "name": "update",
+            "url": "localhost:3000/drivers/4",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2024-04-21T22:34:55.063Z",
+            "modified": "2024-04-22T01:16:09.782Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"dni\": \"22222\",\n    \"license\": \"asfas\",\n    \"license_type\": \"Personal\",\n    \"emision_date\": \"2024-02-25\",\n    \"able_to_drive\": true\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "4934f374-e203-4021-ae53-622f1a92f0d1",
+            "colId": "ba3cb0cd-cc83-4a05-8513-bcfa2c0c30d3",
+            "containerId": "cd61cec2-16ad-48d8-8a6a-73811216ff7d",
+            "name": "update",
+            "url": "localhost:3000/vehicles/2",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2024-04-21T22:44:05.863Z",
+            "modified": "2024-04-22T20:09:49.040Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"kms\": 14000,\n  \"is_available\": true\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "fe2d47dd-8783-479f-9f57-167ac02428df",
+            "colId": "ba3cb0cd-cc83-4a05-8513-bcfa2c0c30d3",
+            "containerId": "fd00d0c6-96fd-492e-b18c-a860da81ec6c",
+            "name": "update",
+            "url": "localhost:3000/trips/1",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2024-04-21T22:51:39.023Z",
+            "modified": "2024-04-22T22:44:22.012Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"kms\": 6000\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "d13b33d0-dde8-486e-a35e-b45eb87c76ff",
+            "colId": "ba3cb0cd-cc83-4a05-8513-bcfa2c0c30d3",
+            "containerId": "d616208b-b110-4991-9b77-f7775636b466",
+            "name": "delete",
+            "url": "localhost:3000/drivers/7",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2024-04-21T22:35:18.233Z",
+            "modified": "2024-04-26T20:41:55.642Z",
+            "headers": []
+        },
+        {
+            "_id": "15fbacdf-23fa-487f-9c47-89e1cff10914",
+            "colId": "ba3cb0cd-cc83-4a05-8513-bcfa2c0c30d3",
+            "containerId": "cd61cec2-16ad-48d8-8a6a-73811216ff7d",
+            "name": "delete",
+            "url": "localhost:3000/vehicles/2",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2024-04-21T22:44:05.864Z",
+            "modified": "2024-04-22T20:10:05.776Z",
+            "headers": []
+        },
+        {
+            "_id": "a7d78eb6-7b60-4d83-a65f-5faf66480d0a",
+            "colId": "ba3cb0cd-cc83-4a05-8513-bcfa2c0c30d3",
+            "containerId": "fd00d0c6-96fd-492e-b18c-a860da81ec6c",
+            "name": "delete",
+            "url": "localhost:3000/trips/1",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2024-04-21T22:51:39.024Z",
+            "modified": "2024-04-21T22:52:15.099Z",
+            "headers": []
+        }
+    ],
+    "ref": "K1EmiskcJ4phzK6YVdmpGUF4VScasXEF83UF-y8hNZSfXvvzK4SB0_63hIRIPoNt7JqXDbnQnOoVYe2YH_rWQA"
+}

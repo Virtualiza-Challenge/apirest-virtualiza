@@ -1,15 +1,41 @@
 {
   "name": "api-rest-virtualiza",
   "version": "1.0.0",
-  "description": "",
+  "description": "Api rest para el challenge de virtualiza app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "tsc": "tsc",
+    "dev": "NODE_ENV=dev ts-node-dev src/index.ts",
+    "start-build": "node build/index.js",
+    "test": "NODE_ENV=test jest --watch --verbose --detectOpenHandles",
+    "test:coverage": "NODE_ENV=test jest --collect-coverage",
+    "test:report": "NODE_ENV=test jest  --coverage --coverageReporters='json-summary'" 
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "Node",
+    "Typescript",
+    "Express"
+  ],
+  "author": "nikodev",
+  "license": "MIT",
   "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.7",
+    "@types/supertest": "^6.0.2",
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.1.2",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "4.19.2",
+    "mysql2": "^3.9.7",
+    "sequelize": "^6.37.3",
+    "zod": "^3.23.4"
   }
 }
